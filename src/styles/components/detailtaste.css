@@ -1,0 +1,13 @@
+.taste-container {
+  width: 100%;
+  max-width: 350px;
+}
+
+.taste-container canvas {
+  border-radius: 3px;
+  background-color: #F9F9F9;
+}
+
+.taste-widget {
+  text-align: center;
+}

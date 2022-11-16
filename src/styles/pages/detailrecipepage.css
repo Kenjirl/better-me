@@ -1,0 +1,66 @@
+.food-recipe {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em 0;
+  background-color: var(--color-2);
+  color: var(--color-1);
+}
+
+.food-recipe .section {
+  margin: .5em 1em;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  border: 1px solid var(--color-1);
+  border-radius: 10px;
+  background-color: var(--color-2);
+  color: var(--color-1);
+  overflow: hidden;
+}
+
+.food-recipe .section:has(ol, ul) { padding: 1em 2em; }
+
+.food-recipe .section h3 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.food-recipe .section ul,
+.food-recipe .section ol {
+  font-size: .8em;
+}
+
+.food-recipe ul {
+  list-style: none;
+}
+
+.taste.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+@media (min-width: 750px) {
+  .food-recipe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .food-recipe .section {
+    margin: 0;
+    font-size: 1.2em;
+  }
+}
