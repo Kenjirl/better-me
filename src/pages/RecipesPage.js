@@ -28,7 +28,6 @@ const RecipesPage = () => {
 
   return (
     <main className="recipe-page-main">
-      <h2>Recipes List</h2>
       <form onSubmit={onSearchFormSubmit} action="#" id="searchForm" className="search-bar">
         <input className="search-input" name="recipe" id="recipe" type="text" onChange={onSearchRecipeChange} placeholder="cari resep ..." />
         <button className="search-btn" type="submit"><FiSearch/></button>

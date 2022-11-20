@@ -2,14 +2,14 @@
 
 .light,
 :root:has(#light:checked) {
-  --color-1: #41444B;
+  --color-1: #40434a;
   --color-2: #F9F9F9;
 }
 
 .brown,
 :root:has(#brown:checked) {
   --color-1: #F9F9F9;
-  --color-2: #967E76;
+  --color-2: #A4BE7B;
 }
 
 .dark,
@@ -78,9 +78,12 @@ a, button {
   cursor: pointer;
 }
 
-a:focus, button:focus {
+a:focus, button:focus, 
+a:hover, button:hover {
   background-color: var(--color-1);
   color: var(--color-2);
+  outline: 2px solid var(--color-2);
+  outline-offset: -4px;
 }
 
 a:active, button:active {

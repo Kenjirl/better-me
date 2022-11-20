@@ -1,0 +1,21 @@
+.back-button-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.back-button-container h3 {
+  display: none;
+  color: var(--color-1);
+}
+
+@media screen and (min-width: 600px) {
+  .back-button-container h3 {
+    display: block;
+  }
+}

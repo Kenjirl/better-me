@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getSource } from "../utils/spoonacular-api";
 import { DetailEquipment } from "../components/DetailEquipment";
 import { DetailIngredient } from "../components/DetailIngredient";
@@ -8,9 +8,11 @@ import { DetailTaste } from "../components/DetailTaste";
 import { DetailNutrient } from "../components/DetailNutrient";
 import { DetailInfo } from "../components/DetailInfo";
 import '../styles/pages/detailrecipepage.css';
+import { BackButton } from "../components/BackButton";
 
 const DetailRecipePage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [recipe, setRecipe] = useState([]);
   const [equipments, setEquipments] = useState([]);
@@ -47,19 +49,17 @@ const DetailRecipePage = () => {
   }, [id]);
 
   return (
-    <main className="food-recipe" id="foodRecipe">
-      <DetailInfo recipe={recipe} />
-
-      <DetailEquipment equipments={equipments} />
-
-      <DetailIngredient ingredients={ingredients} />
-
-      <DetailStep steps={steps} />
-
-      <DetailTaste chartConfig={chartConfig} tastes={tastes} />
-
-      <DetailNutrient nutrients={nutrients} />
-    </main>
+    <>
+      <BackButton navigate={navigate} />
+      <main className="food-recipe" id="foodRecipe">
+        <DetailInfo recipe={recipe} />
+        <DetailEquipment equipments={equipments} />
+        <DetailIngredient ingredients={ingredients} />
+        <DetailStep steps={steps} />
+        <DetailTaste chartConfig={chartConfig} tastes={tastes} />
+        <DetailNutrient nutrients={nutrients} />
+      </main>
+    </>
   )
 }
 
