@@ -1,108 +1,19 @@
 .recipe-page-main {
   position: relative;
   width: 100%;
-  min-height: 100vh;
 }
 
-.recipe-page-main h2 {
-  margin-bottom: 1em;
-  padding: 2em 1em;
-  color: var(--color-2);
-  background-color: var(--color-1);
-  font-weight: 700;
-  text-align: center;
-}
-
-.search-bar {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-input {
-  margin-right: 2px;
-  flex-grow: 1;
-  outline: none;
-  border: 2px solid var(--color-1);
-}
-
-.search-btn {
-  box-shadow: none;
-}
-
-.search-btn:hover,
-.search-btn:active,
-.search-btn:focus {
-  background-color: var(--color-1);
-  color: var(--color-2);
-}
-
-
-.recipes-list {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1em;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1em;
-}
-
-.recipe-container {
-  width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  outline: 3px solid var(--color-1);
-  background-color: var(--color-2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.recipe-container h3 {
-  padding: 1em;
-  color: var(--color-1);
-  text-align: center;
-}
-
-.recipe-container a {
-  width: fit-content;
-  margin: 1em;
-}
-
-.recipes-list img {
-  width: 100%;
-  max-width: 500px;
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 2/1;
-}
-
-@media screen and (min-width: 600px) {
-  .recipes-list {
-    grid-template-columns: 1fr 1fr;
+@media screen and (min-width: 800px) {
+  .recipe-page-main {
+    padding: .5em;
+    display: flex;
+    align-items: flex-start;
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .recipe-page-main h2 {
-    padding: 2em 1em;
-  }
-
-  .search-bar {
-    padding: 1em 2em;
-  }
-
-  .recipes-list {
-    padding: 2em;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
+@media screen and (min-width: 1200px) {
+  .recipe-page-main {
+    width: fit-content;
+    margin: 0 auto;
   }
 }

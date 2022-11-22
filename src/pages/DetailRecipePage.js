@@ -7,8 +7,9 @@ import { DetailStep } from "../components/DetailStep";
 import { DetailTaste } from "../components/DetailTaste";
 import { DetailNutrient } from "../components/DetailNutrient";
 import { DetailInfo } from "../components/DetailInfo";
-import '../styles/pages/detailrecipepage.css';
 import { BackButton } from "../components/BackButton";
+import '../styles/pages/detailrecipepage.css';
+import '../styles/components/detailnutrient.css';
 
 const DetailRecipePage = () => {
   const { id } = useParams();
@@ -50,15 +51,17 @@ const DetailRecipePage = () => {
 
   return (
     <>
+    <main>
       <BackButton navigate={navigate} />
-      <main className="food-recipe" id="foodRecipe">
+      <div className="food-recipe" id="foodRecipe">
         <DetailInfo recipe={recipe} />
         <DetailEquipment equipments={equipments} />
         <DetailIngredient ingredients={ingredients} />
         <DetailStep steps={steps} />
         <DetailTaste chartConfig={chartConfig} tastes={tastes} />
         <DetailNutrient nutrients={nutrients} />
-      </main>
+      </div>
+    </main>
     </>
   )
 }

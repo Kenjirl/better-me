@@ -1,0 +1,44 @@
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: .5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+}
+
+.search-input {
+  width: 100%;
+  outline: none;
+  border: 2px solid var(--color-1);
+}
+
+.search-btn {
+  width: 100%;
+  padding: 0;
+  box-shadow: none;
+}
+
+.search-btn:hover,
+.search-btn:active,
+.search-btn:focus {
+  background-color: var(--color-1);
+  color: var(--color-2);
+}
+
+.search-btn > svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+@media screen and (min-width: 800px) {
+  .search-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    max-width: 300px;
+  }
+}

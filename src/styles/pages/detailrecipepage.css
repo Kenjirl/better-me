@@ -24,6 +24,8 @@
 
 .food-recipe .section:has(ol, ul) { padding: 1em 2em; }
 
+.food-recipe .section:has(ol) { align-items: flex-start; }
+
 .food-recipe .section h3 {
   display: block;
   width: 100%;
