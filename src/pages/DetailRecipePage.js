@@ -8,8 +8,8 @@ import { DetailTaste } from "../components/DetailTaste";
 import { DetailNutrient } from "../components/DetailNutrient";
 import { DetailInfo } from "../components/DetailInfo";
 import { BackButton } from "../components/BackButton";
+import { Loading } from "../components/Loading";
 import '../styles/pages/detailrecipepage.css';
-import '../styles/components/detailnutrient.css';
 
 const DetailRecipePage = () => {
   const { id } = useParams();
@@ -24,7 +24,15 @@ const DetailRecipePage = () => {
     labels: [],
     datasets:[],
   });
-  const [nutrients, setNutrients] = useState([]);
+  const [nutrients, setNutrients] = useState({
+    bad: [],
+    calories: 'no record found',
+    carbs: 'no record found',
+    fat: 'no record found',
+    good: [],
+    protein: 'no record found',
+  });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getSource(id).then(({ data }) => {
@@ -32,7 +40,14 @@ const DetailRecipePage = () => {
       setEquipments(data.equipments);
       setIngredients(data.ingredients);
       setSteps(data.steps);
-      setNutrients(data.nutrients);
+      setNutrients({
+        bad: [...data.nutrients.bad],
+        calories: data.nutrients.calories,
+        carbs: data.nutrients.carbs,
+        fat: data.nutrients.fat,
+        good: [...data.nutrients.good],
+        protein: data.nutrients.protein,
+      });
       setTastes(data.tastesData);
       setChartConfig({
         labels: data.tastesData.map(data => data.name),
@@ -46,8 +61,18 @@ const DetailRecipePage = () => {
           },
         ],
       });
+      setIsLoading(false);
     });
   }, [id]);
+
+  if (isLoading) {
+    return (
+      <main>
+        <BackButton navigate={navigate} />
+        <Loading />
+      </main>
+    )
+  }
 
   return (
     <>

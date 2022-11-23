@@ -1,23 +1,116 @@
 .search-bar {
+  position: fixed;
+  top: 0;
+  left: -800px;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
+  /* max-width: 500px; */
+  min-height: 100vh;
   margin: 0 auto;
   padding: .5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--color-1);
+  border-radius: 5px;
+  background-color: var(--color-2);
+  transition: all .5s ease;
+  z-index: 200;
+}
+
+.search-bar.open {
+  left: 0;
+}
+
+.toggle-search-btn {
+  margin: 0 auto;
+  font-size: 2em;
+  box-shadow: none;
+}
+
+.search-bar h2 {
+  width: 100%;
+  padding: .5em 0;
+  margin-bottom: .5em;
+  border-bottom: 2px solid var(--color-1);
+  color: var(--color-1);
+  text-align: center;
+}
+
+.input-container {
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.search-bar label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   gap: .5em;
+}
+
+.search-bar span {
+  color: var(--color-1);
+  font-weight: 700;
 }
 
 .search-input {
   width: 100%;
+  margin-bottom: 1em;
   outline: none;
   border: 2px solid var(--color-1);
 }
 
+.selector-container {
+  width: 100%;
+  margin-bottom: 1em;
+  padding-bottom: .5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5em;
+  overflow-y: auto;
+}
+
+.search-input[type=radio], .search-input[type=checkbox] {
+  min-width: 100px;
+  min-height: 44px;
+  margin: 0;
+	padding: .5em 0;
+  display: flex;
+  align-items: center;
+	border-radius: 5px;
+	outline: none;
+  border: 2px solid var(--color-1);
+	background-color: var(--color-2);
+	color: var(--color-1);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 12px;
+	cursor: pointer;
+	transition: all .3s linear;
+}
+
+.search-input[type=radio]:checked, .search-input[type=checkbox]:checked {
+  background-color: var(--color-1);
+	color: var(--color-2);
+  outline: 2px solid var(--color-2);
+  outline-offset: -5px;
+}
+
+.search-input[type=radio]:before, .search-input[type=checkbox]::before {
+	content: attr(label);
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
 .search-btn {
   width: 100%;
+  margin-top: 1em;
   padding: 0;
   box-shadow: none;
 }
@@ -29,16 +122,22 @@
   color: var(--color-2);
 }
 
-.search-btn > svg {
-  width: 1.5em;
-  height: 1.5em;
-}
-
 @media screen and (min-width: 800px) {
   .search-bar {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: .5em;
     max-width: 300px;
+    min-height: 0;
+    margin: .25em;
+  }
+
+  .toggle-search-btn {
+    display: none;
+  }
+
+  .input-container {
+    max-height: 60vh;
+    padding-right: .5em;
   }
 }

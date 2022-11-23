@@ -11,6 +11,9 @@ const RecipesPage = () => {
     minCalories: 0,
     maxCalories: 1000,
     ingredients: '',
+    type: '',
+    diet: '',
+    intolerant: '',
   });
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -62,6 +65,43 @@ const RecipesPage = () => {
     }));
   }
 
+  const onRecipeTypeChoosen = event => {
+    setSearchRecipe((prevState) => ({
+      ...prevState, 
+      type: event.target.value,
+    }));
+    console.log(event.target.value);
+  }
+
+  const onRecipeDietChoosen = event => {
+    setSearchRecipe((prevState) => ({
+      ...prevState, 
+      diet: event.target.value,
+    }));
+    console.log(event.target.value);
+  }
+
+  const onRecipeIntolerantChecked = event => {
+    if (searchRecipe.intolerant.includes(event.target.value)) {
+      const splittedIntolerant = searchRecipe.intolerant.split(',');
+      const filteredIntolerant = splittedIntolerant.filter(i => !i.includes(event.target.value));
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        intolerant: filteredIntolerant.join(','),
+      }));
+    }else if (searchRecipe.intolerant === '') {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        intolerant: event.target.value,
+      }));
+    } else {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        intolerant: `${prevState.intolerant},${event.target.value}`,
+      }));
+    }
+  }
+
   if (isLoading) {
     return (
     <main className="recipe-page-main">
@@ -70,12 +110,15 @@ const RecipesPage = () => {
           nameChange={onRecipeNameChange} 
           calorieChange={onRecipeCaloriesChange} 
           ingredientChange={onRecipeIngredientsChange}
-        />
+          typeChoosen={onRecipeTypeChoosen} 
+          dietChoosen={onRecipeDietChoosen} 
+          intolerantChecked={onRecipeIntolerantChecked}
+          />
         <Loading />
       </main>
     )
   }
-
+  
   return (
     <main className="recipe-page-main">
       <RecipeSearch 
@@ -83,6 +126,9 @@ const RecipesPage = () => {
         nameChange={onRecipeNameChange} 
         calorieChange={onRecipeCaloriesChange} 
         ingredientChange={onRecipeIngredientsChange}
+        typeChoosen={onRecipeTypeChoosen}
+        dietChoosen={onRecipeDietChoosen} 
+        intolerantChecked={onRecipeIntolerantChecked}
       />
       <RecipeList recipesList={recipes} />
     </main>

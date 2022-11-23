@@ -10,10 +10,3 @@
     align-items: flex-start;
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .recipe-page-main {
-    width: fit-content;
-    margin: 0 auto;
-  }
-}

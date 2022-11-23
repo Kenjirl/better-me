@@ -8,7 +8,7 @@ export const DetailTaste = ({ chartConfig, tastes }) => {
   if (!tastes) {
     return (
       <section id="tasteSection" className="taste section">
-        <h3>Taste Widget</h3>
+        <h3>Taste Chart</h3>
         <ul className="taste-widget" id="tasteWidget">
           <li>Tidak ada tastes</li>
         </ul>
@@ -18,19 +18,30 @@ export const DetailTaste = ({ chartConfig, tastes }) => {
 
   return (
     <section id="tasteSection" className="taste section">
-      <h3>Taste Widget</h3>
+      <h3>Taste Chart</h3>
       <div className="taste-container" id="tasteContainer">
         <Radar data={chartConfig} />
       </div>
-      <ul className="taste-widget" id="tasteWidget">
-        {
-          tastes.map((taste, index) => {
-            return (
-              <li key={index}>{taste.name} - {taste.value}</li>
-            )
-          })
-        }
-      </ul>
+      <table className="taste-table">
+        <thead>
+          <tr>
+            <th colSpan={2}>Taste Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            tastes.map((taste, index) => {
+              const value = parseInt(taste.value,10);
+              return (
+                <tr key={index}>
+                  <td>{taste.name}</td>
+                  <td>{value}%</td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
     </section>
   )
 }

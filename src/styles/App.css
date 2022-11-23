@@ -8,8 +8,8 @@
 
 .brown,
 :root:has(#brown:checked) {
-  --color-1: #F9F9F9;
-  --color-2: #A4BE7B;
+  --color-1: #A4BE7B;
+  --color-2: #F9F9F9;
 }
 
 .dark,
@@ -25,6 +25,7 @@
 
 ::-webkit-scrollbar-track {
   border-radius: 0;
+  background-color: #F9F9F9;
 }
 
 ::-webkit-scrollbar-thumb {

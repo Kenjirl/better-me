@@ -1,11 +1,12 @@
-// const API_KEY = '320e0fbf344c463793cf046bdff36de8';
-const API_KEY = '156b4218b04147e690781d4aff77412c';
+const API_KEY = '320e0fbf344c463793cf046bdff36de8';
+// const API_KEY = '156b4218b04147e690781d4aff77412c';
 // const API_KEY = '62ced6cb4ff040bf94a2fed12bf322e0';
 // const API_KEY = 'a8163ef157d9435c824f14a487311733';
 
 async function getManyRecipes({searchRecipe}) {
+  // console.log(searchRecipe);
   const response = await fetch(`
-    https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&includeIngredients=${searchRecipe.ingredients}&sort=calories
+    https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&includeIngredients=${searchRecipe.ingredients}&type=${searchRecipe.type}&diet=${searchRecipe.diet}&sort=calories&instructionsRequired=true
   `);
   const responseJson = await response.json();
 
@@ -23,6 +24,7 @@ async function getManyRecipes({searchRecipe}) {
 async function getSource(id) {
   const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`);
   const responseJson = await response.json();
+  console.log(responseJson);
 
   const { extendedIngredients } = responseJson;
   let steps = [];
@@ -88,14 +90,10 @@ async function getSource(id) {
 }
 
 async function getNutrientDetail(id) {
-  const response = await fetch(`https://api.spoonacular.com/recipes/${id}/nutritionLabel?apiKey=${API_KEY}`);
-  const responseHTML = await response.text();
+  const response = await fetch(`https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${API_KEY}`);
+  const responseJson = await response.json();
 
-  const parser = new DOMParser();
-	const newHTML = parser.parseFromString(responseHTML, 'text/html');
-  const nutrientHTML = newHTML.querySelector('body').innerHTML;
-
-  return { nutrients:nutrientHTML };
+  return { nutrients:responseJson };
 }
 
 async function getTasteDetail(id) {

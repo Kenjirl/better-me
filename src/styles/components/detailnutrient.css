@@ -1,84 +1,56 @@
-#spoonacular-nutrition-label,
-#spoonacular-nutrition-ingredient-list {
-  border: 1px solid #41444B;
-  border-radius: 3px;
-  margin: 0 auto;
-  width: 300px;
-  padding: .5rem;
-  font-family: 'Nunito', sans-serif;
-  font-size:14px;
-  color:#41444B;
-  background-color:#F9F9F9;
-}
-
-#spoonacular-nutrition-ingredient-list { text-transform:uppercase; }
-
-#spoonacular-nutrition-label div.separator { border-bottom:10px solid #41444B; }
-
-#spoonacular-nutrition-label > div:first-of-type{
-  border-bottom:10px solid #41444B;
-  padding:0 0 .25rem 0;
-  margin:0 0 .5rem 0;
-}
-
-#spoonacular-nutrition-label > div:first-of-type p{
-  margin:0;
-  font-size:16px;
-}
-
-#spoonacular-nutrition-label table{
-  border-collapse:unset;
-  border-spacing:0;
-  font-size:14px;
-  width:100%;
-}
-
-#spoonacular-nutrition-label table td{
-  font-weight:normal;
-  text-align:left;
-  padding:.3rem 0;
-  border-top:1px solid #41444B;
-  vertical-align:middle;
-}
-
-#spoonacular-nutrition-label table .empty{
-  width:1rem;
-  border-top:0;
-}
-
-#spoonacular-nutrition-label table #calorie-summary td{
-  font-size:33px;
-  border:0 none!important;
-}
-
-#spoonacular-nutrition-label b{font-weight:900}
-
-#spoonacular-nutrition-label .separator td{border-top-width:5px}
-
-#spoonacular-nutrition-label table:first-of-type td:last-child{text-align:right!important}
-
-#spoonacular-nutrition-label table:nth-of-type(2) td:first-child{text-align:left!important}
-
-#spoonacular-nutrition-label table:nth-of-type(2) td:nth-of-type(2){text-align:right!important}
-
-#spoonacular-nutrition-label .small{font-size:11px}
-
-#spoonacular-nutrition-label h1.separator{border-bottom:1px solid #41444B}
-
-#spoonacular-nutrition-label h1{
-  font-size:35px;
-  margin:0 0 .25rem 0;
-}
-
-#spoonacular-nutrition-label {
-  max-width: 100%;
-  max-height: 500px;
+.nutrient-tables {
+  width: 90%;
+  max-width: 350px;
+  max-height: 80vh;
+  padding-right: .5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  background-color: var(--color-2);
   overflow-y: auto;
-  border: 1px solid var(--color-1);
-  background-color: #F9F9F9;
-  color: #41444B;
 }
 
-#spoonacular-nutrition-label > div > h1 { font-size: 2em; }
+.nutrient-table th, .nutrient-table td {
+  padding: .25em;
+  border: none;
+  background-color: var(--color-2);
+}
 
-#calorie-summary > td > b { font-size: .8em; }
+.nutrient-table th {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  text-align: center;
+}
+
+.nutrient-table td:nth-child(odd) {
+  text-align: start;
+}
+
+.nutrient-table td:nth-child(even) {
+  text-align: end;
+}
+
+.nutrient-table {
+  width: 100%;
+  margin: 0 auto;
+  padding: .125em;
+  border-radius: 3px;
+  background-color: var(--color-1);
+  color: var(--color-1);
+  text-align: center;
+  overflow: hidden;
+}
+
+.nutrient-table td {
+  font-size: .9em;
+}
+
+.nutrient-table th {
+  font-weight: 500;
+}
+
+@media (min-width: 750px) {
+  .nutrient-tables {
+    max-height: 100vh;
+  }
+}

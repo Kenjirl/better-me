@@ -1,15 +1,5 @@
 import $ from 'jquery';
 
-// window.addEventListener('scroll', e => {
-//   if (window.scrollY > 10) {
-//     $('.header-home').css('box-shadow', '0 0 20px var(--color-1)');
-//     $('.logo-img').css('width', '50px');
-//   } else {
-//     $('.header-home').css('box-shadow', 'none');
-//     $('.logo-img').css('width', '100px');
-//   }
-// });
-
 const storeTheme = theme => {
   localStorage.setItem("web-theme", theme);
 }
