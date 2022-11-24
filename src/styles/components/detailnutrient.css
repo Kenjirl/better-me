@@ -1,3 +1,9 @@
+.nutrient > p {
+  padding: 0 2em;
+  text-align: justify;
+  font-size: .9em;
+}
+
 .nutrient-tables {
   width: 90%;
   max-width: 350px;
@@ -6,19 +12,19 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
-  background-color: var(--color-2);
+  background-color: rgb(var(--color-2));
   overflow-y: auto;
 }
 
 .nutrient-table th, .nutrient-table td {
   padding: .25em;
   border: none;
-  background-color: var(--color-2);
+  background-color: rgb(var(--color-2));
 }
 
 .nutrient-table th {
-  background-color: var(--color-1);
-  color: var(--color-2);
+  background-color: rgb(var(--color-1));
+  color: rgb(var(--color-2));
   text-align: center;
 }
 
@@ -35,8 +41,8 @@
   margin: 0 auto;
   padding: .125em;
   border-radius: 3px;
-  background-color: var(--color-1);
-  color: var(--color-1);
+  background-color: rgb(var(--color-1));
+  color: rgb(var(--color-1));
   text-align: center;
   overflow: hidden;
 }
@@ -47,10 +53,4 @@
 
 .nutrient-table th {
   font-weight: 500;
-}
-
-@media (min-width: 750px) {
-  .nutrient-tables {
-    max-height: 100vh;
-  }
 }

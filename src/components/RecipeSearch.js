@@ -3,16 +3,17 @@ import { FiSearch, FiX } from "react-icons/fi";
 import { searchFormToggle } from "../utils/search-form-init";
 import '../styles/components/recipesearch.css';
 
-export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked }) => {
+export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe }) => {
   const recipeTypes = ['appetizer', 'beverage', 'breakfast', 'dessert', 'drink', 'main course', 'salad', 'side dish', 'snack', 'soup'];
   const recipeDiets = ['gluten free', 'ketogenic', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'pescetarian', 'paleo', 'primal'];
   const recipeIntolerants = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree nut', 'wheat'];
 
   return (
     <>
-      <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><FiSearch/></button>
+      <div className="toggle-search-container">
+        <button type="button" className="toggle-search-btn" onClick={searchFormToggle}><FiSearch/></button>
+      </div>
       <form onSubmit={searchFormSubmit} action="#" id="searchForm" className="search-bar">
-        <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><FiX/></button>
         <h2>Search Recipe</h2>
         <div className="input-container">
           <label htmlFor="recipe">
@@ -66,7 +67,11 @@ export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingr
             </div>
           </label>
         </div>
-        <button className="search-btn" type="submit" onClick={searchFormToggle}>Search Recipe</button>
+        <div className="button-container">
+          <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><FiX/></button>
+          <button type="button" onClick={randomizeRecipe}>Randomize</button>
+          <button className="search-btn" type="submit" onClick={searchFormToggle}>Search</button>
+        </div>
       </form>
     </>
   )

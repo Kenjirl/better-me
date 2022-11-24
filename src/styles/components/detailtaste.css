@@ -11,12 +11,12 @@
 .taste-table th, .taste-table td {
   padding: .25em;
   border: none;
-  background-color: var(--color-2);
+  background-color: rgb(var(--color-2));
 }
 
 .taste-table th {
-  background-color: var(--color-1);
-  color: var(--color-2);
+  background-color: rgb(var(--color-1));
+  color: rgb(var(--color-2));
   text-align: center;
 }
 
@@ -34,8 +34,8 @@
   margin: 0 auto;
   padding: .125em;
   border-radius: 3px;
-  background-color: var(--color-1);
-  color: var(--color-1);
+  background-color: rgb(var(--color-1));
+  color: rgb(var(--color-1));
   overflow: hidden;
 }
 

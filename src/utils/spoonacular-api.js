@@ -4,7 +4,6 @@ const API_KEY = '320e0fbf344c463793cf046bdff36de8';
 // const API_KEY = 'a8163ef157d9435c824f14a487311733';
 
 async function getManyRecipes({searchRecipe}) {
-  // console.log(searchRecipe);
   const response = await fetch(`
     https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&includeIngredients=${searchRecipe.ingredients}&type=${searchRecipe.type}&diet=${searchRecipe.diet}&sort=calories&instructionsRequired=true
   `);
@@ -19,6 +18,22 @@ async function getManyRecipes({searchRecipe}) {
   }
 
   return { error: false, data:responseJson.results};
+}
+
+async function getRandomRecipe() {
+  const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12`);
+  const responseJson = await response.json();
+  console.log(responseJson);
+
+  if (response.status === 402) {
+    alert('Telah mencapai batas quota maksimum untuk API Spoonacular');
+  }
+
+  if (response.status !== 200) {
+    return { error: true, data:null};
+  }
+
+  return { error: false, data:responseJson.recipes};
 }
 
 async function getSource(id) {
@@ -121,5 +136,6 @@ async function getTasteDetail(id) {
 
 export {
   getManyRecipes, 
+  getRandomRecipe, 
   getSource
 }

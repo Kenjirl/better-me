@@ -7,7 +7,7 @@ header {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
-  background-color: var(--color-2);
+  background-color: rgb(var(--color-2));
   transition: all .3s ease;
   z-index: 200;
 }
@@ -27,7 +27,7 @@ header {
 .logo:focus, .logo:hover {
   background-color: inherit;
   color: inherit;
-  outline: 1px solid var(--color-1);
+  outline: 1px solid rgb(var(--color-1));
   outline-offset: 4px;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -35,7 +35,7 @@ header {
 
 .logo img {
   width: 50px;
-  outline: 5px solid var(--color-2);
+  outline: 5px solid rgb(var(--color-2));
   outline-offset: -3px;
   border-radius: 50%;
   transition: width .3s ease;
@@ -44,7 +44,7 @@ header {
 .logo h1 {
   display: none;
   font-size: 1.5em;
-  color: var(--color-1);
+  color: rgb(var(--color-1));
   text-align: center;
 }
 
@@ -87,7 +87,7 @@ nav.mobile {
   grid-template-rows: auto 1fr;
   row-gap: .5em;
   align-items: start;
-  background-color: var(--color-2);
+  background-color: rgb(var(--color-2));
   transition: all .5s ease;
   z-index: 300;
 }
@@ -112,13 +112,13 @@ nav.mobile .container {
 .nav-sub-item {
   width: 100%;
   border: none;
-  border-top: 2px solid var(--color-1);
+  border-top: 2px solid rgb(var(--color-1));
   border-radius: 0;
   box-shadow: none;
 }
 
 .nav-sub-item:nth-last-child(1) {
-  border-bottom: 2px solid var(--color-1);
+  border-bottom: 2px solid rgb(var(--color-1));
 }
 
 .nav-sub-item:active {
@@ -168,10 +168,10 @@ nav.mobile .container {
   }
   
   .dropdown-item-container.open {
-    translate: 0 1.375em;
     display: block;
     scale: 1;
     visibility: 1;
+    translate: 0 1.85em;
   }
 
   .mobile-nav-toggle {

@@ -3,8 +3,8 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 1em 0;
-  background-color: var(--color-2);
-  color: var(--color-1);
+  background-color: rgb(var(--color-2));
+  color: rgb(var(--color-1));
 }
 
 .food-recipe .section {
@@ -15,10 +15,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1em;
-  border: 1px solid var(--color-1);
+  border: 1px solid rgb(var(--color-1));
   border-radius: 10px;
-  background-color: var(--color-2);
-  color: var(--color-1);
+  background-color: rgb(var(--color-2));
+  color: rgb(var(--color-1));
   overflow: hidden;
 }
 
@@ -27,11 +27,16 @@
 .food-recipe .section:has(ol) { align-items: flex-start; }
 
 .food-recipe .section h3 {
-  display: block;
-  width: 100%;
+  width: fit-content;
+  margin: 0 auto;
+  padding: .5em 1em;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.2em;
+  color: rgb(var(--color-1));
+  background-color: rgb(var(--color-2));
+  border: 1px solid rgb(var(--color-1));
+  box-shadow: -5px 5px 0px rgb(var(--color-1));
 }
 
 .food-recipe .section ul,

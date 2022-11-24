@@ -2,20 +2,20 @@
 
 .light,
 :root:has(#light:checked) {
-  --color-1: #40434a;
-  --color-2: #F9F9F9;
+  --color-1: 64, 67, 74;
+  --color-2: 249, 249, 249;
 }
 
 .brown,
 :root:has(#brown:checked) {
-  --color-1: #A4BE7B;
-  --color-2: #F9F9F9;
+  --color-1: 164, 190, 123;
+  --color-2: 249, 249, 249;
 }
 
 .dark,
 :root:has(#dark:checked) {
-  --color-1: #F9F9F9;
-  --color-2: #41444B;
+  --color-1: 249, 249, 249;
+  --color-2: 65, 68, 75;
 }
 
 ::-webkit-scrollbar {
@@ -70,10 +70,10 @@ a, button {
   font-weight: 700;
   text-decoration: none;
   outline: none;
-  color: var(--color-1);
-  background-color: var(--color-2);
-  box-shadow: 0 5px 0.1px var(--color-1);
-  border: 2px solid var(--color-1);
+  color: rgb(var(--color-1));
+  background-color: rgb(var(--color-2));
+  box-shadow: 0 5px 0.1px rgb(var(--color-1));
+  border: 2px solid rgb(var(--color-1));
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
@@ -81,9 +81,9 @@ a, button {
 
 a:focus, button:focus, 
 a:hover, button:hover {
-  background-color: var(--color-1);
-  color: var(--color-2);
-  outline: 2px solid var(--color-2);
+  background-color: rgb(var(--color-1));
+  color: rgb(var(--color-2));
+  outline: 2px solid rgb(var(--color-2));
   outline-offset: -4px;
 }
 
@@ -100,7 +100,7 @@ h2 { font-weight: 700; }
 h3 { font-weight: 500; }
 
 #root {
-  background-color: var(--color-2);
+  background-color: rgb(var(--color-2));
 }
 
 @media screen and (min-width: 600px) {

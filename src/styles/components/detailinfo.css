@@ -5,8 +5,8 @@
   padding: .5em 1em;
   text-align: center;
   text-transform: uppercase;
-  background-color: var(--color-2);
-  border: 3px solid var(--color-1);
+  background-color: rgb(var(--color-2));
+  border: 3px solid rgb(var(--color-1));
   border-radius: 10px;
 }
 

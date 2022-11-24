@@ -16,9 +16,9 @@ export const RecipeList = ({ recipesList }) => {
       {
         recipesList.map((recipe) => (
           <div className='recipe-container' key={recipe.id}>
-            <img src={`${recipe.image}`} alt={`${recipe.title}`} className='skeleton-loading' draggable={false} />
-            <h3 className="skeleton-loading">{recipe.title}</h3>
-            <p className="skeleton-loading">{recipe.nutrition.nutrients[0].name} : {recipe.nutrition.nutrients[0].amount} {recipe.nutrition.nutrients[0].unit}</p>
+            <img src={`${recipe.image}`} alt={`${recipe.title}`} draggable={false} />
+            <h3>{recipe.title}</h3>
+            {/* <p>{recipe.nutrition.nutrients[0].name} : {recipe.nutrition.nutrients[0].amount} {recipe.nutrition.nutrients[0].unit}</p> */}
             <Link to={`/recipe/${recipe.id}/detail`} className='to-detail-btn'>Try this Recipe</Link>
           </div>
         ))

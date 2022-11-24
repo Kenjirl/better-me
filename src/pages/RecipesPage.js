@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getManyRecipes } from "../utils/spoonacular-api";
+import { getManyRecipes, getRandomRecipe } from "../utils/spoonacular-api";
 import { RecipeList } from "../components/RecipeList";
 import { RecipeSearch } from "../components/RecipeSearch";
 import { Loading } from "../components/Loading";
+import { searchFormToggle } from "../utils/search-form-init";
 import '../styles/pages/recipespage.css';
 
 const RecipesPage = () => {
@@ -26,8 +27,8 @@ const RecipesPage = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onSearchFormSubmit = e => {
-    e.preventDefault();
+  const onSearchFormSubmit = event => {
+    event.preventDefault();
     setIsLoading(true);
     getManyRecipes({searchRecipe}).then(({ data }) => {
       setRecipes(data);
@@ -70,7 +71,6 @@ const RecipesPage = () => {
       ...prevState, 
       type: event.target.value,
     }));
-    console.log(event.target.value);
   }
 
   const onRecipeDietChoosen = event => {
@@ -78,7 +78,6 @@ const RecipesPage = () => {
       ...prevState, 
       diet: event.target.value,
     }));
-    console.log(event.target.value);
   }
 
   const onRecipeIntolerantChecked = event => {
@@ -89,7 +88,7 @@ const RecipesPage = () => {
         ...prevState, 
         intolerant: filteredIntolerant.join(','),
       }));
-    }else if (searchRecipe.intolerant === '') {
+    } else if (searchRecipe.intolerant === '') {
       setSearchRecipe((prevState) => ({
         ...prevState, 
         intolerant: event.target.value,
@@ -102,6 +101,17 @@ const RecipesPage = () => {
     }
   }
 
+  const onRandomizeRecipe = event => {
+    event.preventDefault();
+    searchFormToggle();
+    setIsLoading(true);
+    getRandomRecipe().then(({ data }) => {
+      setRecipes(data);
+      console.log(recipes);
+      setIsLoading(false);
+    });
+  }
+
   if (isLoading) {
     return (
     <main className="recipe-page-main">
@@ -112,13 +122,14 @@ const RecipesPage = () => {
           ingredientChange={onRecipeIngredientsChange}
           typeChoosen={onRecipeTypeChoosen} 
           dietChoosen={onRecipeDietChoosen} 
-          intolerantChecked={onRecipeIntolerantChecked}
+          intolerantChecked={onRecipeIntolerantChecked} 
+          randomizeRecipe={onRandomizeRecipe}
           />
         <Loading />
       </main>
     )
   }
-  
+
   return (
     <main className="recipe-page-main">
       <RecipeSearch 
@@ -128,7 +139,8 @@ const RecipesPage = () => {
         ingredientChange={onRecipeIngredientsChange}
         typeChoosen={onRecipeTypeChoosen}
         dietChoosen={onRecipeDietChoosen} 
-        intolerantChecked={onRecipeIntolerantChecked}
+        intolerantChecked={onRecipeIntolerantChecked} 
+        randomizeRecipe={onRandomizeRecipe}
       />
       <RecipeList recipesList={recipes} />
     </main>
