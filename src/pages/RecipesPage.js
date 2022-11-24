@@ -15,6 +15,7 @@ const RecipesPage = () => {
     type: '',
     diet: '',
     intolerant: '',
+    sort: '',
   });
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -101,13 +102,19 @@ const RecipesPage = () => {
     }
   }
 
+  const onRecipeSortChoosen = event => {
+    setSearchRecipe((prevState) => ({
+      ...prevState, 
+      sort: event.target.value,
+    }));
+  }
+
   const onRandomizeRecipe = event => {
     event.preventDefault();
     searchFormToggle();
     setIsLoading(true);
     getRandomRecipe().then(({ data }) => {
       setRecipes(data);
-      console.log(recipes);
       setIsLoading(false);
     });
   }
@@ -123,7 +130,8 @@ const RecipesPage = () => {
           typeChoosen={onRecipeTypeChoosen} 
           dietChoosen={onRecipeDietChoosen} 
           intolerantChecked={onRecipeIntolerantChecked} 
-          randomizeRecipe={onRandomizeRecipe}
+          randomizeRecipe={onRandomizeRecipe} 
+          sortChoosen={onRecipeSortChoosen}
           />
         <Loading />
       </main>
@@ -140,7 +148,8 @@ const RecipesPage = () => {
         typeChoosen={onRecipeTypeChoosen}
         dietChoosen={onRecipeDietChoosen} 
         intolerantChecked={onRecipeIntolerantChecked} 
-        randomizeRecipe={onRandomizeRecipe}
+        randomizeRecipe={onRandomizeRecipe} 
+        sortChoosen={onRecipeSortChoosen}
       />
       <RecipeList recipesList={recipes} />
     </main>

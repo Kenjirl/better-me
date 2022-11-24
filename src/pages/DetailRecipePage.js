@@ -9,6 +9,7 @@ import { DetailNutrient } from "../components/DetailNutrient";
 import { DetailInfo } from "../components/DetailInfo";
 import { BackButton } from "../components/BackButton";
 import { Loading } from "../components/Loading";
+import { DetailSimilar } from "../components/DetailSimilar";
 import '../styles/pages/detailrecipepage.css';
 
 const DetailRecipePage = () => {
@@ -32,9 +33,11 @@ const DetailRecipePage = () => {
     good: [],
     protein: 'no record found',
   });
+  const [similarRecipe, setSimilarRecipe] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getSource(id).then(({ data }) => {
       setRecipe(data.recipe);
       setEquipments(data.equipments);
@@ -61,6 +64,7 @@ const DetailRecipePage = () => {
           },
         ],
       });
+      setSimilarRecipe(data.similars);
       setIsLoading(false);
     });
   }, [id]);
@@ -84,7 +88,8 @@ const DetailRecipePage = () => {
         <DetailIngredient ingredients={ingredients} />
         <DetailStep steps={steps} />
         <DetailTaste chartConfig={chartConfig} tastes={tastes} />
-        <DetailNutrient nutrients={nutrients} />
+        <DetailNutrient nutrients={nutrients} /> 
+        <DetailSimilar similarRecipes={similarRecipe} />
       </div>
     </main>
     </>

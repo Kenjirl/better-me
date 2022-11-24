@@ -3,10 +3,11 @@ import { FiSearch, FiX } from "react-icons/fi";
 import { searchFormToggle } from "../utils/search-form-init";
 import '../styles/components/recipesearch.css';
 
-export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe }) => {
+export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) => {
   const recipeTypes = ['appetizer', 'beverage', 'breakfast', 'dessert', 'drink', 'main course', 'salad', 'side dish', 'snack', 'soup'];
   const recipeDiets = ['gluten free', 'ketogenic', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'pescetarian', 'paleo', 'primal'];
   const recipeIntolerants = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree nut', 'wheat'];
+  const recipeSort = ['caffein', 'calories', 'carbs', 'cholesterol', 'energy', 'healthiness', 'protein', 'sugar', 'total-fat']
 
   return (
     <>
@@ -61,6 +62,19 @@ export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingr
                 recipeIntolerants.map((intolerant, index) => {
                   return (
                     <input key={index} className="search-input" name="intolerant" id="intolerant" type="checkbox" onChange={intolerantChecked} value={intolerant} label={intolerant} />
+                  )
+                })
+              }
+            </div>
+          </label>
+          <label htmlFor="sort">
+            <span>Sort By</span>
+            <div className="selector-container">
+              <input className="search-input" name="sort" id="sort" type="radio" onChange={sortChoosen} value='' label='none' />
+              { 
+                recipeSort.map((sort, index) => {
+                  return (
+                    <input key={index} className="search-input" name="sort" id="sort" type="radio" onChange={sortChoosen} value={sort} label={sort} />
                   )
                 })
               }

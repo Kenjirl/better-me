@@ -1,11 +1,12 @@
-const API_KEY = '320e0fbf344c463793cf046bdff36de8';
-// const API_KEY = '156b4218b04147e690781d4aff77412c';
+// const API_KEY = '320e0fbf344c463793cf046bdff36de8';
+const API_KEY = '156b4218b04147e690781d4aff77412c';
 // const API_KEY = '62ced6cb4ff040bf94a2fed12bf322e0';
 // const API_KEY = 'a8163ef157d9435c824f14a487311733';
 
 async function getManyRecipes({searchRecipe}) {
+  // console.log(searchRecipe);
   const response = await fetch(`
-    https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&includeIngredients=${searchRecipe.ingredients}&type=${searchRecipe.type}&diet=${searchRecipe.diet}&sort=calories&instructionsRequired=true
+    https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&includeIngredients=${searchRecipe.ingredients}&type=${searchRecipe.type}&diet=${searchRecipe.diet}&sort=${searchRecipe.sort}&instructionsRequired=true
   `);
   const responseJson = await response.json();
 
@@ -39,7 +40,10 @@ async function getRandomRecipe() {
 async function getSource(id) {
   const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`);
   const responseJson = await response.json();
-  console.log(responseJson);
+
+  if (response.status === 402) {
+    alert('Telah mencapai batas quota maksimum untuk API Spoonacular');
+  }
 
   const { extendedIngredients } = responseJson;
   let steps = [];
@@ -76,6 +80,7 @@ async function getSource(id) {
 
   const { nutrients } = await getNutrientDetail(id);
   const { tastes } = await getTasteDetail(id);
+  const { similarRecipes } = await getSimilarRecipes(id);
 
   if (response.status !== 200) {
     return { 
@@ -86,7 +91,8 @@ async function getSource(id) {
         ingredients:null, 
         steps:null,
         nutrients:null, 
-        tastesData:null,
+        tastesData:null, 
+        similars: null,
       },
     };
   }
@@ -100,6 +106,7 @@ async function getSource(id) {
       steps:steps,
       nutrients:nutrients, 
       tastesData:tastes, 
+      similars: similarRecipes,
     },
   };
 }
@@ -134,8 +141,16 @@ async function getTasteDetail(id) {
   };
 }
 
+async function getSimilarRecipes(id) {
+  const response = await fetch(`https://api.spoonacular.com/recipes/${id}/similar?apiKey=${API_KEY}`);
+  const responseJson = await response.json();
+  
+  return { similarRecipes: responseJson };
+}
+
 export {
   getManyRecipes, 
   getRandomRecipe, 
-  getSource
+  getSource, 
+  getSimilarRecipes
 }
