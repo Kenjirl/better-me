@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { setTheme } from './utils/nav-bar-init';
+// import { setTheme } from './utils/nav-bar-init';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
@@ -10,9 +10,9 @@ import './styles/App.css';
 
 const App = () => {
 
-  useEffect(() => {
-    setTheme();
-  });
+  // useEffect(() => {
+  //   setTheme();
+  // });
 
   return (
     <>

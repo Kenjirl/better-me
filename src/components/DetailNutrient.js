@@ -6,9 +6,48 @@ export const DetailNutrient = ({ nutrients }) => {
     return (
       <section id="nutrientSection" className="nutrient section">
         <h3>Nutrient Info</h3>
-        <ul>
-          <li>No nutrient info recorded</li>
-        </ul>
+        <div className="nutrient-tables">
+          <table className="nutrient-table">
+            <thead>
+              <tr>
+                <th colSpan={2}>Main Nutrient</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No record found</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <table className="nutrient-table">
+            <thead>
+              <tr>
+                <th colSpan={2}>Good Nutrient</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No record found</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+          <table className="nutrient-table">
+            <thead>
+              <tr>
+                <th colSpan={2}>Bad Nutrient</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No record found</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>*The percentage tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutrition advice. </p>
       </section>
     )
   }

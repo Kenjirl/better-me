@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
+  z-index: 200;
 }
 
 .recipe-container {

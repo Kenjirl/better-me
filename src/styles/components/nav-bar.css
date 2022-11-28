@@ -25,7 +25,7 @@ header {
 }
 
 .logo:focus, .logo:hover {
-  background-color: inherit;
+  background-color: transparent;
   color: inherit;
   outline: 1px solid rgb(var(--color-1));
   outline-offset: 4px;
@@ -50,12 +50,14 @@ header {
 
 .header-2 {
   position: relative;
+  margin-bottom: 2em;
   padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1em;
+  background-color: rgb(var(--color-3));
 }
 
 .header-2 .logo {
@@ -65,10 +67,23 @@ header {
 
 .header-2 .logo img {
   width: 100px;
+  outline: 5px solid rgb(var(--color-3));
 }
 
 .header-2 .logo h1 {
   display: block;
+  color: rgb(var(--color-1));
+}
+
+.header-2 div:has(> .svg) {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  background-color: rgb(var(--color-2));
+}
+
+.header-2 .svg {
+  width: 100%;
 }
 
 nav.desktop {
@@ -161,7 +176,7 @@ nav.mobile .container {
   .dropdown-item-container {
     position: absolute;
     width: 100%;
-    transform: translateY(-11.25px);
+    transform: translateY(-18.75px);
     scale: 0;
     visibility: 0;
     transition: all .3s ease;
@@ -185,8 +200,12 @@ nav.mobile .container {
 
 @media screen and (min-width: 1000px) {
   header {
-    padding: 1em 1.5em;
+    padding: .5em 1.5em;
     grid-template-rows: 1fr;
     row-gap: 0;
+  }
+
+  .header-2 div:has(> .svg) {
+    top: -3em;
   }
 }

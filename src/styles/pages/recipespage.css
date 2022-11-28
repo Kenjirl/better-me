@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
+  background-color: rgb(var(--color-2));
 }
 
 @media screen and (min-width: 800px) {

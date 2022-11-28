@@ -11,19 +11,32 @@ main {
   align-items: center;
   justify-content: flex-start;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.parallax-caption h2 {
+  width: 100%;
+  max-width: 300px;
+  padding: .5em;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: rgb(var(--color-1));
+  background-color: rgb(var(--color-2));
+  border: 1px solid rgb(var(--color-1));
+  box-shadow: -10px 10px 1px rgb(var(--color-1));
+}
+
 .parallax.description { 
-  background-image: url('../../../public/img/prlx-bg-1.jpg'); 
+  background-position: left;
+  background-image: url('../../../public/img/background-1.jpg'); 
   text-align: justify;
+  align-items: flex-end;
 }
 
 .description .parallax-caption {
   width: 100%;
-  height: 45vh;
+  height: 40vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -33,27 +46,22 @@ main {
 
 .description-caption {
   width: 100%;
-  height: 55vh;
+  height: 60vh;
   padding: 1em;
-  background-image: linear-gradient(to bottom, 
-  rgba(var(--color-2), 0), 
-  rgba(var(--color-2), 0), 
-  rgba(var(--color-2), 0), 
-  rgba(var(--color-2), 1)
-  );
   text-align: justify;
 }
 
 .description-caption > div {
   width: 100%;
   max-width: 450px;
-  margin: 0 auto;
+  margin: 1em auto;
+  padding: 2em;
+  background-color: rgba(var(--color-2), .9);
 }
 
 .description span {
   font-size: 1.25em;
-  color: rgb(249, 249, 249);
-  text-shadow: 1px 1px 5px rgb(64, 67, 74);
+  color: rgb(var(--color-1));
 }
 
 .description span:nth-child(1) {
@@ -62,195 +70,158 @@ main {
 }
 
 .parallax.services { 
-  background-image: url('../../../public/img/prlx-bg-2.jpg'); 
+  background-position: right top;
+  background-image: url('../../../public/img/background-2.jpg'); 
 }
 
 .services .parallax-caption {
   width: 100%;
-  height: 40vh;
+  height: 35vh;
   padding: 1em;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  background-image: linear-gradient(to top, 
-    rgba(var(--color-2), 0), 
-    rgba(var(--color-2), 0), 
-    rgba(var(--color-2), 0), 
-    rgba(var(--color-2), 1)
-  );
 }
 
 .services-container {
   width: 100%;
-  min-height: 100vh;
-  padding: 1em 0;
+  min-height: 65vh;
+  padding: 1em 0 6em 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
-  background-image: linear-gradient(to bottom, 
-    rgba(var(--color-2), 0), 
-    rgba(var(--color-2), 0), 
-    rgba(var(--color-2), .8), 
-    rgba(var(--color-2), 1)
-  );
 }
 
 .services-container p {
   text-align: center;
-  background-color: rgb(var(--color-2));
   color: rgb(var(--color-1));
   padding: 1em;
 }
 
-.services-container a {
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0 2em;
-  border: .5px solid rgb(var(--color-1));
-  box-shadow: none;
-  z-index: 1;
-}
-
 .service-info {
   width: 100%;
+  height: fit-content;
   margin: 0 auto;
-  background-color: rgba(var(--color-1), .9);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
 
 .service-info > p {
   max-width: 450px;
   margin: 0 auto;
-  color: rgb(var(--color-2));
-  background-color: transparent;
+  padding: 0;
+  color: rgb(var(--color-1));
 }
 
 .service-info a {
-  display: none;
+  margin-bottom: 5px;
+}
+
+div:has(> .service) {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
 }
 
 .service {
   width: 100%;
-  max-width: 300px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
   text-align: justify;
   border: 2px solid rgb(var(--color-1));
-  border-radius: 20px;
+  border-radius: 10px;
+  background-color: rgba(var(--color-2), .75);
   overflow: hidden;
-  background-color: #F9F9F9;
 }
 
 .service h3 {
   width: 100%;
-  padding: 1em 0;
-  background-color: rgb(var(--color-2));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: rgb(var(--color-1));
-  border-bottom: 2px solid rgb(var(--color-1));
   text-align: center;
   font-weight: 700;
 }
 
-.service .svg {
-  max-width: 200px;
+.service > div {
+  width: 150px;
+  height: 100%;
+  margin: 0 auto;
+  padding: .5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 1/1;
 }
 
-.service svg [data-svg="main-color"] {
-  fill: rgb(var(--color-1));
-}
-
-.parallax.img3 { background-image: url('../../../public/img/prlx-bg-3.jpg'); }
-
-.parallax-caption h2 {
+.service .svg {
   width: 100%;
-  max-width: 300px;
-  padding: .5em;
-  font-size: 1.5em;
-  font-weight: 900;
-  color: rgb(var(--color-2));
-  background-color: rgb(var(--color-1));
-  box-shadow: -15px 15px 1px rgb(var(--color-2));
 }
 
-@media screen and (min-width: 700px) {
-  .services-container {
-    grid-template-columns: 1fr 1fr;
+.service > p {
+  padding: 0;
+  text-align: start;
+}
+
+@media screen and (min-width: 400px) {
+  .service {
+    grid-template-columns: auto 1fr;
   }
 
+  .service > div {
+    grid-row: 1/3;
+    border-right: 2px solid rgb(var(--color-1));
+  }
+
+  .service > p {
+    padding: 0 0 0 1em;
+  }
+}
+
+@media screen and (min-width: 650px) {
   .service-info {
-    width: fit-content;
-    grid-column: 1/3;
+    max-width: 750px;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   .service-info > p {
+    margin: 0;
     font-size: 1.25em;
-  }
-
-  .service {
-    height: fit-content;
-    padding: 0;
-  }
-
-  .services a {
-    padding: 0 3em;
-    grid-column: 1/3;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .description {
+@media screen and (min-width: 800px) {
+  div:has(> .service) {
     flex-direction: row;
   }
+}
 
-  .description span {
-    font-size: 1.5em;
-    color: rgb(var(--color-1));
-    text-shadow: 1px 1px 5px rgb(var(--color-2));
-  }
-
+@media screen and (min-width: 900px) {
   .description .parallax-caption {
-    height: 100vh;
-    align-items: center;
+    width: 50%;
   }
 
   .description-caption {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: none;
-    background-color: rgb(var(--color-2));
-    text-align: justify;
+    width: 50%;
   }
 
-  .services {
-    flex-direction: row-reverse;
-  }
-
-  .services .parallax-caption {
-    min-height: 100vh;
-    align-items: center;
-    background-image: none;
-  }
-
-  .services-container {
-    padding: 4em 1em 2em 1em;
-    background-image: none;
-    background-color: rgb(var(--color-2));
-  }
-
-  .service-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .description-caption > div {
     background-color: transparent;
-  }
-
-  .service-info > p {
-    color: rgb(var(--color-1));
   }
 }

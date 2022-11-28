@@ -32,7 +32,7 @@
   right: 50%;
   width: 100px;
   height: 100px; 
-  background-color: rgb(var(--color-1));
+  background-color: rgb(var(--color-3));
   animation: loading-rotate 1s infinite;
   transform-origin: bottom right;
 }

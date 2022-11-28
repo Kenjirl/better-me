@@ -58,9 +58,9 @@ const DetailRecipePage = () => {
           {
             label:"Taste Widget",
             data: data.tastesData.map(data => data.value),
-            backgroundColor:"rgba(38,159,202,0.2)",
-            borderColor:"rgb(38,159,202)",
-            pointBackgroundColor:"rgb(38,159,202)",
+            backgroundColor:"rgba(254,201,227,0.2)",
+            borderColor:"rgb(254,201,227)",
+            pointBackgroundColor:"rgb(254,201,227)",
           },
         ],
       });

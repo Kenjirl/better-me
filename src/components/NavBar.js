@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from 'react-icons/fi';
 import { navSubItemClicked, mobileNavToggle, dropdownToggle } from "../utils/nav-bar-init";
+import bg from '../svg/search-wave.svg';
 import '../styles/components/nav-bar.css';
 
 const NavBar = () => {
@@ -57,6 +58,9 @@ const NavBar = () => {
         <img src="../../img/logo.png" alt="better me's logo"/>
         <h1>Better Me</h1>
       </Link>
+      <div>
+        <img className="svg" src={bg} alt='' />
+      </div>
     </header>
   )
 }

@@ -5,15 +5,20 @@
 }
 
 .nutrient-tables {
+  position: relative;
   width: 90%;
   max-width: 350px;
-  max-height: 80vh;
+  max-height: 100vh;
   padding-right: .5em;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
   background-color: rgb(var(--color-2));
   overflow-y: auto;
+}
+
+.nutrient-table {
+  position: relative;
 }
 
 .nutrient-table th, .nutrient-table td {

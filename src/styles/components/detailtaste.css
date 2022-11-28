@@ -5,7 +5,7 @@
 
 .taste-container canvas {
   border-radius: 3px;
-  background-color: #F9F9F9;
+  background-color: rgb(var(--color-2));
 }
 
 .taste-table th, .taste-table td {
