@@ -7,7 +7,6 @@
   text-transform: uppercase;
   background-color: rgb(var(--color-2));
   border: 3px solid rgb(var(--color-1));
-  border-radius: 10px;
 }
 
 .recipe-img img {

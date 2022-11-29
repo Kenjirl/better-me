@@ -11,5 +11,32 @@
     padding: .5em;
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    flex-basis: 30%;
+  }
+  
+  .recipes-list {
+    flex: 1;
+  }
+
+  .loading-wrapper {
+    flex: 1;
+  }
+
+  .recipes-list-empty {
+    flex: 1;
+  }
+
+  .pagiantion {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .search-bar {
+    flex-basis: 25%;
   }
 }

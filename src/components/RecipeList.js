@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/components/recipelist.css";
 
-export const RecipeList = ({ recipesList }) => {
+export const RecipeList = ({ recipesList, page }) => {
   if (!recipesList.length) {
     return (
       <div className="recipes-list-empty">
@@ -11,10 +11,12 @@ export const RecipeList = ({ recipesList }) => {
     )
   }
 
+  const indexRecipe = page * 10;
+
   return (
     <div className="recipes-list" id="recipesList">
       {
-        recipesList.map((recipe) => (
+        recipesList.slice(0+indexRecipe, 10+indexRecipe).map((recipe) => (
           <div className='recipe-container' key={recipe.id}>
             <img src={`${recipe.image}`} alt={`${recipe.title}`} draggable={false} />
             <h3>{recipe.title}</h3>

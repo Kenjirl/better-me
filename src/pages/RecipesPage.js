@@ -4,6 +4,7 @@ import { RecipeList } from "../components/RecipeList";
 import { RecipeSearch } from "../components/RecipeSearch";
 import { Loading } from "../components/Loading";
 import { searchFormToggle } from "../utils/search-form-init";
+import RecipePagination from "../components/RecipePagination";
 import '../styles/pages/recipespage.css';
 
 const RecipesPage = () => {
@@ -19,6 +20,7 @@ const RecipesPage = () => {
   });
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [recipeIndex, setRecipeIndex] = useState(0);
 
   useEffect(() => {
     getManyRecipes({searchRecipe}).then(({ data }) => {
@@ -33,6 +35,7 @@ const RecipesPage = () => {
     setIsLoading(true);
     getManyRecipes({searchRecipe}).then(({ data }) => {
       setRecipes(data);
+      setRecipeIndex(0);
       setIsLoading(false);
     });
   }
@@ -115,8 +118,13 @@ const RecipesPage = () => {
     setIsLoading(true);
     getRandomRecipe().then(({ data }) => {
       setRecipes(data);
+      setRecipeIndex(0);
       setIsLoading(false);
     });
+  }
+
+  const onPaginationChange = (pageIndex) => {
+    setRecipeIndex(Number(pageIndex.selected));
   }
 
   if (isLoading) {
@@ -151,7 +159,14 @@ const RecipesPage = () => {
         randomizeRecipe={onRandomizeRecipe} 
         sortChoosen={onRecipeSortChoosen}
       />
-      <RecipeList recipesList={recipes} />
+      <RecipeList 
+        recipesList={recipes} 
+        page={recipeIndex} 
+      />
+      <RecipePagination 
+        pageChange={onPaginationChange} 
+        pageNumber={(Math.floor(recipes.length/10))} 
+      />
     </main>
   )
 }
