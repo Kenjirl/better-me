@@ -11,24 +11,6 @@
   background-color: rgb(var(--color-1));
 }
 
-/* .light,
-:root:has(#light:checked) {
-  --color-1: 64, 67, 74;
-  --color-2: 252,253,255;
-}
-
-.brown,
-:root:has(#green:checked) {
-  --color-1: 164, 190, 123;
-  --color-2: 249, 249, 249;
-}
-
-.dark,
-:root:has(#dark:checked) {
-  --color-1: 249, 249, 249;
-  --color-2: 65, 68, 75;
-} */
-
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

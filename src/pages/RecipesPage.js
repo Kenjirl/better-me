@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import $ from 'jquery';
 import { getManyRecipes, getRandomRecipe } from "../utils/spoonacular-api";
 import { RecipeList } from "../components/RecipeList";
 import { RecipeSearch } from "../components/RecipeSearch";
 import { Loading } from "../components/Loading";
-import { searchFormToggle } from "../utils/search-form-init";
 import RecipePagination from "../components/RecipePagination";
 import '../styles/pages/recipespage.css';
 
@@ -32,6 +32,7 @@ const RecipesPage = () => {
 
   const onSearchFormSubmit = event => {
     event.preventDefault();
+    onSearchFormToggle();
     setIsLoading(true);
     getManyRecipes({searchRecipe}).then(({ data }) => {
       setRecipes(data);
@@ -114,7 +115,7 @@ const RecipesPage = () => {
 
   const onRandomizeRecipe = event => {
     event.preventDefault();
-    searchFormToggle();
+    onSearchFormToggle();
     setIsLoading(true);
     getRandomRecipe().then(({ data }) => {
       setRecipes(data);
@@ -127,10 +128,15 @@ const RecipesPage = () => {
     setRecipeIndex(Number(pageIndex.selected));
   }
 
+  const onSearchFormToggle = () => {
+    $('form#searchForm').toggleClass('open');
+  };
+
   if (isLoading) {
     return (
     <main className="recipe-page-main">
         <RecipeSearch 
+          searchFormToggle={onSearchFormToggle} 
           searchFormSubmit={onSearchFormSubmit} 
           nameChange={onRecipeNameChange} 
           calorieChange={onRecipeCaloriesChange} 
@@ -149,6 +155,7 @@ const RecipesPage = () => {
   return (
     <main className="recipe-page-main">
       <RecipeSearch 
+        searchFormToggle={onSearchFormToggle} 
         searchFormSubmit={onSearchFormSubmit} 
         nameChange={onRecipeNameChange} 
         calorieChange={onRecipeCaloriesChange} 

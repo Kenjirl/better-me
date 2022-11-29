@@ -1,9 +1,8 @@
 import React from "react";
 import { FiSearch, FiX } from "react-icons/fi";
-import { searchFormToggle } from "../utils/search-form-init";
 import '../styles/components/recipesearch.css';
 
-export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) => {
+export const RecipeSearch = ({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) => {
   const recipeTypes = ['appetizer', 'beverage', 'breakfast', 'dessert', 'drink', 'main course', 'salad', 'side dish', 'snack', 'soup'];
   const recipeDiets = ['gluten free', 'ketogenic', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'pescetarian', 'paleo', 'primal'];
   const recipeIntolerants = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree nut', 'wheat'];
@@ -84,7 +83,7 @@ export const RecipeSearch = ({ searchFormSubmit, nameChange, calorieChange, ingr
         <div className="button-container">
           <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><FiX/></button>
           <button type="button" onClick={randomizeRecipe}>Randomize</button>
-          <button className="search-btn" type="submit" onClick={searchFormToggle}>Search</button>
+          <button className="search-btn" type="submit">Search</button>
         </div>
       </form>
     </>

@@ -20,6 +20,11 @@ export const RecipeList = ({ recipesList, page }) => {
           <div className='recipe-container' key={recipe.id}>
             <img src={`${recipe.image}`} alt={`${recipe.title}`} draggable={false} />
             <h3>{recipe.title}</h3>
+            {
+              recipe.nutrition 
+              ? <p>Calories : {recipe.nutrition.nutrients[0].amount}kcal</p>
+              : <p></p>
+            }
             <Link to={`/recipe/${recipe.id}/detail`} className='to-detail-btn'>Try this Recipe</Link>
           </div>
         ))
