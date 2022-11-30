@@ -41,9 +41,25 @@ async function getRandomRecipe() {
 async function getSource(id) {
   const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`);
   const responseJson = await response.json();
+  console.log(responseJson);
 
   if (response.status === 402) {
     alert('Telah mencapai batas quota maksimum untuk API Spoonacular');
+  }
+
+  if (response.status !== 200) {
+    return { 
+      error: true, 
+      data: {
+        recipe:null, 
+        equipments:null, 
+        ingredients:null, 
+        steps:null,
+        nutrients:null, 
+        tastesData:null, 
+        similars: null,
+      },
+    };
   }
 
   const { extendedIngredients } = responseJson;
@@ -83,21 +99,6 @@ async function getSource(id) {
   const { tastes } = await getTasteDetail(id);
   const { similarRecipes } = await getSimilarRecipes(id);
 
-  if (response.status !== 200) {
-    return { 
-      error: true, 
-      data: {
-        recipe:null, 
-        equipments:null, 
-        ingredients:null, 
-        steps:null,
-        nutrients:null, 
-        tastesData:null, 
-        similars: null,
-      },
-    };
-  }
-  
   return { 
     error: false, 
     data: {

@@ -59,7 +59,7 @@
 
 @media screen and (min-width: 800px) {
   .recipes-list {
-    padding: .5em;
+    padding: 0 .5em;
   }
 }
 

@@ -10,6 +10,7 @@ import { DetailInfo } from "../components/DetailInfo";
 import { BackButton } from "../components/BackButton";
 import { Loading } from "../components/Loading";
 import { DetailSimilar } from "../components/DetailSimilar";
+import NotFound from "../components/NotFound";
 import '../styles/pages/detailrecipepage.css';
 
 const DetailRecipePage = () => {
@@ -38,42 +39,55 @@ const DetailRecipePage = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getSource(id).then(({ data }) => {
-      setRecipe(data.recipe);
-      setEquipments(data.equipments);
-      setIngredients(data.ingredients);
-      setSteps(data.steps);
-      setNutrients({
-        bad: [...data.nutrients.bad],
-        calories: data.nutrients.calories,
-        carbs: data.nutrients.carbs,
-        fat: data.nutrients.fat,
-        good: [...data.nutrients.good],
-        protein: data.nutrients.protein,
-      });
-      setTastes(data.tastesData);
-      setChartConfig({
-        labels: data.tastesData.map(data => data.name),
-        datasets:[
-          {
-            label:"Taste Widget",
-            data: data.tastesData.map(data => data.value),
-            backgroundColor:"rgba(254,201,227,0.2)",
-            borderColor:"rgb(254,201,227)",
-            pointBackgroundColor:"rgb(254,201,227)",
-          },
-        ],
-      });
-      setSimilarRecipe(data.similars);
+    getSource(id).then(({ error, data }) => {
+      if (error) {
+        setRecipe(null);
+      } else {
+        setRecipe(data.recipe);
+        setEquipments(data.equipments);
+        setIngredients(data.ingredients);
+        setSteps(data.steps);
+        setNutrients({
+          bad: [...data.nutrients.bad],
+          calories: data.nutrients.calories,
+          carbs: data.nutrients.carbs,
+          fat: data.nutrients.fat,
+          good: [...data.nutrients.good],
+          protein: data.nutrients.protein,
+        });
+        setTastes(data.tastesData);
+        setChartConfig({
+          labels: data.tastesData.map(data => data.name),
+          datasets:[
+            {
+              label:"Taste Widget",
+              data: data.tastesData.map(data => data.value),
+              backgroundColor:"rgba(254,201,227,0.2)",
+              borderColor:"rgb(254,201,227)",
+              pointBackgroundColor:"rgb(254,201,227)",
+            },
+          ],
+        });
+        setSimilarRecipe(data.similars);
+      }
       setIsLoading(false);
     });
   }, [id]);
 
   if (isLoading) {
     return (
-      <main>
+      <main className="detail-recipe-main">
         <BackButton navigate={navigate} />
         <Loading />
+      </main>
+    )
+  }
+
+  if (recipe === null) {
+    return (
+      <main className="detail-recipe-main">
+        <BackButton navigate={navigate} />
+        <NotFound />
       </main>
     )
   }

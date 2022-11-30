@@ -59,7 +59,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 1em;
-  background-color: rgb(var(--color-3));
+  background-color: transparent;
   box-shadow: none;
 }
 
@@ -101,6 +101,10 @@ nav.mobile {
   min-height: 100vh;
   padding: 0;
   background-color: rgb(var(--color-2));
+  background-image: url('../../svg/layered-waves-top.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: all .5s ease;
   z-index: 300;
 }
@@ -123,6 +127,10 @@ nav.mobile .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url('../../svg/layered-waves-bottom.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container .nav-sub-item {
@@ -137,8 +145,7 @@ nav.mobile .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(var(--color-3));
-  /* background-color: transparent; */
+  background-color: transparent;
 }
 
 .nav-sub-item {
@@ -149,7 +156,7 @@ nav.mobile .container {
   box-shadow: none;
 }
 
-.nav-sub-item:nth-child(4) {
+.nav-sub-item:nth-child(3) {
   border-bottom: 2px solid rgb(var(--color-1));
 }
 
@@ -160,19 +167,6 @@ nav.mobile .container {
 
 .mobile-nav-toggle {
   aspect-ratio: 1.25 / 1;
-}
-
-.mobile div:has(> .svg) {
-  position: absolute;
-  left: 0;
-  top: 4em;
-  width: 100%;
-  background-color: transparent;
-  /* transform: rotate(180deg); */
-}
-
-.mobile .svg {
-  width: 100%;
 }
 
 @media screen and (min-width: 300px) {
@@ -233,9 +227,5 @@ nav.mobile .container {
     padding: .5em 1.5em;
     grid-template-rows: 1fr;
     row-gap: 0;
-  }
-
-  .header-2 div:has(> .svg) {
-    top: -3em;
   }
 }

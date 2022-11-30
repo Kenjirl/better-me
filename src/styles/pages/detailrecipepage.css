@@ -3,7 +3,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 1em 0;
-  background-color: rgb(var(--color-2));
+  background-color: transparent;
   color: rgb(var(--color-1));
 }
 

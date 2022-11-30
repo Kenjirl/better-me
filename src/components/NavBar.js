@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from 'react-icons/fi';
 import $ from 'jquery';
-import wavyBackground from '../svg/wavy-background.svg';
 import '../styles/components/nav-bar.css';
 
 const NavBar = () => {
@@ -62,9 +61,6 @@ const NavBar = () => {
             </div>
           </div>
           <div className="container">
-            <div>
-              <img className="svg" src={wavyBackground} alt='' />
-            </div>
             <a className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" href="#description">Description</a>
             <a className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" href="#services">Services</a>
             <Link className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" to="/recipes">Food Recipes</Link>
@@ -81,9 +77,6 @@ const NavBar = () => {
         <img src="../../img/logo.png" alt="better me's logo"/>
         <h1>Better Me</h1>
       </Link>
-      <div>
-        <img className="svg" src={wavyBackground} alt='' />
-      </div>
     </header>
   )
 }

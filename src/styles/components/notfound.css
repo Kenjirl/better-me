@@ -1,0 +1,88 @@
+.not-found-container {
+  width: 100%;
+  max-width: 1000px;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.not-found-container p {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.error p {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-shadow: 0px 0px 1px rgba(var(--color-1), .5);
+}
+
+.not-found-container p b {
+  font-weight: 900;
+  color: rgb(var(--color-3));
+}
+
+div:has(> ._404) {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+._404 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+._404 p {
+  color: rgb(var(--color-3));
+  font-size: 150px;
+  font-weight: 900;
+  text-shadow: 6px -3px .1px rgb(var(--color-1));
+}
+
+._404.shadow {
+  position: absolute;
+  top: 1em;
+  left: 1.8em;
+  z-index: 100;
+}
+
+._404.shadow p {
+  color: grey;
+  text-shadow: none;
+  transform: rotate3d(4, -2, 1, 60deg);
+}
+
+.error-message {
+  width: 100%;
+  padding: .5em;
+  display: grid;
+  gap: .5em;
+}
+
+.error-quote {
+  margin: 1em;
+  padding: .5em;
+  display: grid;
+  gap: 1em;
+  background-color: rgba(var(--color-2), .75);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(var(--color-1), .5);
+}
+
+.error-quote p {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.error-quote p:nth-child(2) {
+  font-size: 1em;
+  font-weight: 300;
+}
+

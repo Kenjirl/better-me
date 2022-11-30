@@ -1,6 +1,10 @@
 main {
   min-height: 100vh; 
-  background-color: rgb(var(--color-2));
+  background-color: transparent;
+  background-image: url('../../svg/layered-waves-bottom.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .parallax {
