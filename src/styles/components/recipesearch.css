@@ -1,7 +1,9 @@
 .search-bar {
   position: fixed;
-  top: 0;
-  left: -800px;
+  /* top: 0; */
+  bottom: -100vh;
+  left: 0;
+  /* left: -800px; */
   width: 100%;
   max-width: 800px;
   min-height: 100vh;
@@ -22,7 +24,8 @@
 }
 
 .search-bar.open {
-  left: 0;
+  /* left: 0; */
+  bottom: 0;
 }
 
 .toggle-search-container {

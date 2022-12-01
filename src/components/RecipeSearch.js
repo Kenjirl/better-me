@@ -2,7 +2,7 @@ import React from "react";
 import { FiSearch, FiX } from "react-icons/fi";
 import '../styles/components/recipesearch.css';
 
-export const RecipeSearch = ({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) => {
+export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) {
   const recipeTypes = ['appetizer', 'beverage', 'breakfast', 'dessert', 'drink', 'main course', 'salad', 'side dish', 'snack', 'soup'];
   const recipeDiets = ['gluten free', 'ketogenic', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'pescetarian', 'paleo', 'primal'];
   const recipeIntolerants = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree nut', 'wheat'];

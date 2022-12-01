@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiBookmark, FiList, FiMenu, FiX } from 'react-icons/fi';
 import $ from 'jquery';
 import '../styles/components/nav-bar.css';
 
 const NavBar = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   const navSubItemClicked = () => {
     $('nav#mobile').removeClass('open');
@@ -27,7 +27,7 @@ const NavBar = () => {
     }
   };
 
-  if (location.pathname === '/') {
+  if (pathname === '/') {
     return(
       <header className="header-home">
 
@@ -44,7 +44,8 @@ const NavBar = () => {
               <a className="nav-sub-item" onClick={navSubItemClicked} href="#services" tabIndex="-1">Services</a>
             </div>
           </div>
-          <Link className="nav-item" to="/recipes">Food Recipes</Link>
+          <Link className="nav-item" to="/recipes">Recipes</Link>
+          <Link className="nav-item" to="/bookmarks">Bookmarks</Link>
         </nav>
 
         <div className="mobile-btn-wrapper">
@@ -63,7 +64,8 @@ const NavBar = () => {
           <div className="container">
             <a className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" href="#description">Description</a>
             <a className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" href="#services">Services</a>
-            <Link className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" to="/recipes">Food Recipes</Link>
+            <Link className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" to="/recipes">Recipes</Link>
+            <Link className="nav-sub-item" onClick={navSubItemClicked} tabIndex="-1" to="/bookmarks">Bookmarks</Link>
           </div>
         </nav>
 
@@ -71,12 +73,19 @@ const NavBar = () => {
     )
   }
 
+  let navigate;
+  if (pathname === '/bookmarks') {
+    navigate = <Link to='/recipes' ><FiList />Recipes</Link>
+  } else if (pathname === '/recipes') {
+    navigate = <Link to='/bookmarks' ><FiBookmark />Bookmarks</Link>
+  }
+
   return (
     <header className="header-2">
       <Link to="/" className="logo">
         <img src="../../img/logo.png" alt="better me's logo"/>
-        <h1>Better Me</h1>
       </Link>
+      {navigate}
     </header>
   )
 }

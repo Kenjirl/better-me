@@ -65,3 +65,9 @@
   display: inline-block;
   color: #41444B;
 }
+
+@media (min-width: 750px) {
+  .spoonacular-name {
+    font-size: .9em;
+  }
+}

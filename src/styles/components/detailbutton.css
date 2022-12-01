@@ -1,0 +1,48 @@
+.detail-button-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 1em;
+}
+
+.detail-button-container > div {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.detail-button-container > div:nth-last-child(1) {
+  justify-content: flex-end;
+}
+
+.detail-button-container h3 {
+  display: none;
+  color: rgb(var(--color-1));
+}
+
+.detail-button-container a, .detail-button-container button {
+  width: fit-content;
+  aspect-ratio: 0;
+}
+
+.bookmark-btn.disabled {
+  cursor: not-allowed;
+}
+
+.bookmark-btn.bookmarked svg {
+  fill: currentColor;
+}
+
+@media screen and (min-width: 600px) {
+  .detail-button-container h3 {
+    display: block;
+  }
+}

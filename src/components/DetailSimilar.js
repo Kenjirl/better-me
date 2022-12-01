@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/components/detailsimilar.css";
 
-export const DetailSimilar = ({ similarRecipes }) => {
+export default function DetailSimilar({ similarRecipes }) {
   if (!similarRecipes.length) {
     return (
     <section className="section similar" id="similarSection">

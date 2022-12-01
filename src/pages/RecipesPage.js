@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import $ from 'jquery';
 import { getManyRecipes, getRandomRecipe } from "../utils/spoonacular-api";
-import { RecipeList } from "../components/RecipeList";
-import { RecipeSearch } from "../components/RecipeSearch";
-import { Loading } from "../components/Loading";
+import RecipeList from "../components/RecipeList";
+import RecipeSearch from "../components/RecipeSearch";
 import RecipePagination from "../components/RecipePagination";
+import Loading from "../components/Loading";
 import '../styles/pages/recipespage.css';
 
-const RecipesPage = () => {
+export default function RecipesPage() {
   const [searchRecipe, setSearchRecipe] = useState({
     name: '',
     minCalories: 0,
@@ -23,8 +23,12 @@ const RecipesPage = () => {
   const [recipeIndex, setRecipeIndex] = useState(0);
 
   useEffect(() => {
-    getManyRecipes({searchRecipe}).then(({ data }) => {
-      setRecipes(data);
+    getManyRecipes({searchRecipe}).then(({ error, data }) => {
+      if (error) {
+        setRecipes(null);
+      } else {
+        setRecipes(data);
+      }
       setIsLoading(false);
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -177,5 +181,3 @@ const RecipesPage = () => {
     </main>
   )
 }
-
-export default RecipesPage;

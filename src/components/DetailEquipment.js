@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/components/detailpreps.css';
 
-export const DetailEquipment = ({ equipments }) => {
+export default function DetailEquipment({ equipments }) {
   if (!equipments) {
     return (
       <section id="equipmentSection" className="equipment section">

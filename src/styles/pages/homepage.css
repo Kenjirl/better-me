@@ -64,12 +64,11 @@ main {
 }
 
 .description span {
-  font-size: 1.25em;
   color: rgb(var(--color-1));
 }
 
 .description span:nth-child(1) {
-  font-size: 1.75em;
+  font-size: 1.2em;
   font-weight: 900;
 }
 
@@ -136,6 +135,7 @@ div:has(> .service) {
   align-items: flex-start;
   justify-content: center;
   gap: 1em;
+  overflow: hidden;
 }
 
 .service {
@@ -198,6 +198,14 @@ div:has(> .service) {
 }
 
 @media screen and (min-width: 650px) {
+  .description span {
+    font-size: 1.25em;
+  }
+
+  .description span:nth-child(1) {
+    font-size: 1.75em;
+  }
+
   .service-info {
     max-width: 750px;
     flex-direction: row;

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 import "../styles/components/recipelist.css";
 
-export const RecipeList = ({ recipesList, page }) => {
+export default function RecipeList({ recipesList, page }) {
+  useEffect(() => {
+    Aos.init({duration: 1000});
+  }, []);
+
   if (!recipesList.length) {
     return (
       <div className="recipes-list-empty">
@@ -17,7 +23,7 @@ export const RecipeList = ({ recipesList, page }) => {
     <div className="recipes-list" id="recipesList">
       {
         recipesList.slice(0+indexRecipe, 10+indexRecipe).map((recipe) => (
-          <div className='recipe-container' key={recipe.id}>
+          <div className='recipe-container' key={recipe.id} data-aos="flip-right">
             <img src={`${recipe.image}`} alt={`${recipe.title}`} draggable={false} />
             <h3>{recipe.title}</h3>
             {

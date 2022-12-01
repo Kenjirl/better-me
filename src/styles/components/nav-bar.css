@@ -63,11 +63,6 @@ header {
   box-shadow: none;
 }
 
-.header-2 .logo {
-  flex-direction: column;
-  gap: .5em;
-}
-
 .header-2 .logo img {
   width: 100px;
   outline: 5px solid rgb(var(--color-3));
@@ -78,15 +73,15 @@ header {
   color: rgb(var(--color-1));
 }
 
-.header-2 div:has(> .svg) {
-  position: absolute;
-  bottom: -1px;
-  width: 100%;
-  background-color: rgb(var(--color-2));
+.header-2 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
 
-.header-2 .svg {
-  width: 100%;
+.header-2 > a:has(> svg) {
+  gap: .5em;
 }
 
 nav.desktop {
@@ -156,7 +151,7 @@ nav.mobile .container {
   box-shadow: none;
 }
 
-.nav-sub-item:nth-child(3) {
+.nav-sub-item:nth-last-child(1) {
   border-bottom: 2px solid rgb(var(--color-1));
 }
 

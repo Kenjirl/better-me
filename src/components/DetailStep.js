@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/components/detailstep.css';
 
-export const DetailStep = ({ steps }) => {
+export default function DetailStep({ steps }) {
   if (steps[0] === 'No steps recorded') {
     return (
       <section id="stepsSection" className="steps section">

@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/components/loading.css';
 
-export const Loading = () => {
+export default function Loading() {
   return (
     <div className="loading-wrapper">
       <div className="circle">

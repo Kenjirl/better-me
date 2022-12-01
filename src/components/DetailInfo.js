@@ -1,11 +1,11 @@
 import React from "react";
 import '../styles/components/detailinfo.css';
 
-export const DetailInfo = ({ recipe }) => {
+export default function DetailInfo({ recipe }) {
   if (!recipe) {
     return (
       <div className="recipe-info">
-        <h2 className="recipe-title">Tidak ada data</h2>
+        <h2 className="recipe-title">No data recorded</h2>
       </div>
     )
   }

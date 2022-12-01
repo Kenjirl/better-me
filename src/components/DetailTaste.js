@@ -4,7 +4,7 @@ import { Radar } from 'react-chartjs-2';
 import { Chart, Scale, Ticks } from "chart.js/auto";
 import '../styles/components/detailtaste.css';
 
-export const DetailTaste = ({ chartConfig, tastes }) => {
+export default function DetailTaste({ tastes }) {
   if (!tastes) {
     return (
       <section id="tasteSection" className="taste section">
@@ -16,11 +16,24 @@ export const DetailTaste = ({ chartConfig, tastes }) => {
     )
   }
 
+  const chartData = {
+    labels: tastes.map(data => data.name),
+    datasets:[
+      {
+        label:"Taste Widget",
+        data: tastes.map(data => data.value),
+        backgroundColor:"rgba(254,201,227,0.2)",
+        borderColor:"rgb(254,201,227)",
+        pointBackgroundColor:"rgb(254,201,227)",
+      },
+    ],
+  }
+
   return (
     <section id="tasteSection" className="taste section">
       <h3>Taste Chart</h3>
       <div className="taste-container" id="tasteContainer">
-        <Radar data={chartConfig} />
+        <Radar data={chartData} />
       </div>
       <table className="taste-table">
         <thead>

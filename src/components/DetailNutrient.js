@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/components/detailnutrient.css';
 
-export const DetailNutrient = ({ nutrients }) => {
+export default function DetailNutrient({ nutrients }) {
   if (!nutrients) {
     return (
       <section id="nutrientSection" className="nutrient section">
