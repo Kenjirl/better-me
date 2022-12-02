@@ -1,9 +1,7 @@
 .search-bar {
   position: fixed;
-  /* top: 0; */
   bottom: -100vh;
   left: 0;
-  /* left: -800px; */
   width: 100%;
   max-width: 800px;
   min-height: 100vh;
@@ -20,11 +18,10 @@
   background-size: cover;
   transition: all .5s ease;
   overflow: hidden;
-  z-index: 200;
+  z-index: 20;
 }
 
 .search-bar.open {
-  /* left: 0; */
   bottom: 0;
 }
 
@@ -131,7 +128,6 @@
 
 .button-container button {
   width: fit-content;
-  aspect-ratio: 3/1;
 }
 
 .search-btn:hover,
@@ -151,6 +147,7 @@
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(var(--color-1), .5);
     background-image: none;
+    z-index: 5;
   }
 
   .toggle-search-container, 

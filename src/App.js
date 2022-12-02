@@ -1,18 +1,18 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import HomePage from './pages/HomePage';
+import BookmarksPage from "./pages/BookmarksPage";
+import DetailRecipePage from "./pages/DetailRecipePage";
+import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFoundPage";
+import RecipesPage from "./pages/RecipesPage";
 import Footer from './components/Footer';
-import RecipesPage from './pages/RecipesPage';
-import DetailRecipePage from './pages/DetailRecipePage';
-import NotFoundPage from './pages/NotFoundPage';
-import BookmarksPage from './pages/BookmarksPage';
 import './styles/App.css';
 
 const App = () => {
   return (
     <>
       <NavBar/>
-
       <Routes>
         <Route path='/recipes' element={<RecipesPage/>}/>
         <Route path='/recipe/:id/detail' element={<DetailRecipePage/>}/>
@@ -20,7 +20,6 @@ const App = () => {
         <Route path='/' element={<HomePage/>}/>
         <Route path='/*' element={<NotFoundPage/>}/>
       </Routes>
-
       <Footer/>
     </>
   );

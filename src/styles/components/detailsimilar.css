@@ -21,6 +21,10 @@
   scroll-snap-align: center;
 }
 
+.similar-item:hover h4, .similar-item:focus h4 {
+  color: rgb(var(--color-2));
+}
+
 .similar-item img {
   width: 100%;
 }

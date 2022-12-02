@@ -7,6 +7,7 @@ const Footer = () => {
       <footer>
         <p>copyright 	&#169; 2022 | Better Me</p>
       </footer>
+      <div></div>
     </>
   );
 }

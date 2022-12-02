@@ -1,5 +1,6 @@
 import React from "react";
-import { FiSearch, FiX } from "react-icons/fi";
+// import { FiSearch, FiX } from "react-icons/fi";
+import { BsSearch, BsShuffle, BsX } from "react-icons/bs";
 import '../styles/components/recipesearch.css';
 
 export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) {
@@ -11,7 +12,7 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
   return (
     <>
       <div className="toggle-search-container">
-        <button type="button" className="toggle-search-btn" onClick={searchFormToggle}><FiSearch/></button>
+        <button type="button" className="toggle-search-btn" onClick={searchFormToggle}><BsSearch/></button>
       </div>
       <form onSubmit={searchFormSubmit} action="#" id="searchForm" className="search-bar">
         <h2>Search Recipe</h2>
@@ -81,9 +82,9 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
           </label>
         </div>
         <div className="button-container">
-          <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><FiX/></button>
-          <button type="button" onClick={randomizeRecipe}>Randomize</button>
-          <button className="search-btn" type="submit">Search</button>
+          <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><BsX /></button>
+          <button type="button" onClick={randomizeRecipe}><BsShuffle /></button>
+          <button className="search-btn" type="submit"><BsSearch /></button>
         </div>
       </form>
     </>

@@ -67,9 +67,8 @@ export default function DetailRecipePage() {
           }, 
           similars: [...data.similars],
         });
-        const apalah = bookmarkedRecipes.some(r => r.id === Number(id));
-        console.log(apalah);
-        setIsBookmarked(apalah);
+        const available = bookmarkedRecipes.some(r => r.id === Number(id));
+        setIsBookmarked(available);
       }
       setIsLoading(false);
     });
@@ -91,11 +90,9 @@ export default function DetailRecipePage() {
     if (isBookmarked) {
       bookmarkedRecipes = bookmarkedRecipes.filter(r => r.id !== newBookmarkedRecipe.id);
       setIsBookmarked(false);
-      console.log(`Removed recipe #${newBookmarkedRecipe.id} from bookmark`);
     } else {
       bookmarkedRecipes.push(newBookmarkedRecipe);
       setIsBookmarked(true);
-      console.log(`Added recipe #${newBookmarkedRecipe.id} to bookmark`);
     }
     localStorage.setItem('bookmarkedRecipes', JSON.stringify(bookmarkedRecipes));
   }
