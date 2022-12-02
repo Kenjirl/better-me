@@ -1,6 +1,6 @@
 // const API_KEY = '320e0fbf344c463793cf046bdff36de8';
-const API_KEY = '156b4218b04147e690781d4aff77412c';
-// const API_KEY = '62ced6cb4ff040bf94a2fed12bf322e0';
+// const API_KEY = '156b4218b04147e690781d4aff77412c';
+const API_KEY = '62ced6cb4ff040bf94a2fed12bf322e0';
 // const API_KEY = 'a8163ef157d9435c824f14a487311733';
 
 async function getManyRecipes({searchRecipe}) {

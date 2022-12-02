@@ -67,8 +67,7 @@ export default function DetailRecipePage() {
           }, 
           similars: [...data.similars],
         });
-        const available = bookmarkedRecipes.some(r => r.id === Number(id));
-        setIsBookmarked(available);
+        setIsBookmarked(bookmarkedRecipes.some(r => r.id === Number(id)));
       }
       setIsLoading(false);
     });
@@ -77,12 +76,13 @@ export default function DetailRecipePage() {
 
   const onBookmarkRecipeClicked = () => {
     const newBookmarkedRecipe = {
+      order: Number(bookmarkedRecipes.length) + 1,
       id: recipe.info.id,
       title: recipe.info.title,
       image: recipe.info.image, 
       nutrition: {
         nutrients: [{
-          amount: recipe.nutrients.calories,
+          amount: recipe.nutrients.calories.replace('k',''),
         }],
       },
     };

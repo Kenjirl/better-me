@@ -1,5 +1,4 @@
 import React from "react";
-// import { FiSearch, FiX } from "react-icons/fi";
 import { BsSearch, BsShuffle, BsX } from "react-icons/bs";
 import '../styles/components/recipesearch.css';
 
