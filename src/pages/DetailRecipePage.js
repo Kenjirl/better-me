@@ -10,7 +10,7 @@ import DetailTaste from "../components/DetailTaste";
 import DetailNutrient from "../components/DetailNutrient";
 import DetailSimilar from "../components/DetailSimilar";
 import Loading from "../components/Loading";
-import NotFound from "../components/NotFound";
+import NotFoundPage from "./NotFoundPage";
 import '../styles/pages/detailrecipepage.css';
 
 export default function DetailRecipePage() {
@@ -100,7 +100,6 @@ export default function DetailRecipePage() {
   if (isLoading) {
     return (
       <main className="detail-recipe-main">
-        <DetailButton />
         <Loading />
       </main>
     )
@@ -108,10 +107,7 @@ export default function DetailRecipePage() {
 
   if (recipe === null) {
     return (
-      <main className="detail-recipe-main">
-        <DetailButton />
-        <NotFound />
-      </main>
+      <NotFoundPage />
     )
   }
 

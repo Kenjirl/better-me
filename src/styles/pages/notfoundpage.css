@@ -3,6 +3,7 @@
   max-width: 1000px;
   height: fit-content;
   margin: 0 auto;
+  padding: 2em 0;
 }
 
 .not-found-container p {

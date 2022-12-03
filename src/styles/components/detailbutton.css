@@ -28,8 +28,22 @@
   aspect-ratio: 0;
 }
 
-.bookmark-btn.disabled {
+.disabled {
+  color: #9D9D9D;
+  background-color: rgb(var(--color-2));
+  border: 2px solid #9D9D9D;
+  box-shadow: 0 5px .1px #9D9D9D;
   cursor: not-allowed;
+}
+
+.disabled:hover, .disabled:focus, .disabled:active {
+  color: #9D9D9D;
+  background-color: rgb(var(--color-2));
+  border: 2px solid #9D9D9D;
+  box-shadow: 0 5px .1px #9D9D9D;
+  outline: none;
+  -webkit-transform: none;
+  transform: none;
 }
 
 .bookmark-btn.bookmarked svg {

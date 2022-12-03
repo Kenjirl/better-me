@@ -27,7 +27,7 @@ export default function DetailButton({ bookmarkRecipe, isBookmarked }) {
                 <button type="button" className="bookmark-btn" onClick={bookmarkRecipe}><FiBookmark /></button>
               </Tippy>
           : <Tippy placement="left" interactive={true} content={`Can't Bookmark`} offset={[0, 20]} theme='light-border' animation='perspective'>
-              <button type="button" className="bookmark-btn disabled" disabled={true}><FiBookmark /></button>
+              <button type="button" className="bookmark-btn disabled"><FiBookmark /></button>
             </Tippy>
         }
       </div>
