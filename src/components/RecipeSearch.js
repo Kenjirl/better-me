@@ -1,5 +1,9 @@
 import React from "react";
 import { BsSearch, BsShuffle, BsX } from "react-icons/bs";
+import Tippy from "@tippyjs/react";
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light-border.css';
+import 'tippy.js/animations/perspective.css';
 import '../styles/components/recipesearch.css';
 
 export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) {
@@ -11,7 +15,9 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
   return (
     <>
       <div className="toggle-search-container">
-        <button type="button" className="toggle-search-btn" onClick={searchFormToggle}><BsSearch/></button>
+        <Tippy placement="left" interactive={true} content='Open Search' offset={[0, 20]} theme='light-border' animation='perspective'>
+          <button type="button" className="toggle-search-btn" onClick={searchFormToggle}><BsSearch/></button>
+        </Tippy>
       </div>
       <form onSubmit={searchFormSubmit} action="#" id="searchForm" className="search-bar">
         <h2>Search Recipe</h2>
@@ -81,9 +87,15 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
           </label>
         </div>
         <div className="button-container">
-          <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><BsX /></button>
-          <button type="button" onClick={randomizeRecipe}><BsShuffle /></button>
-          <button className="search-btn" type="submit"><BsSearch /></button>
+          <Tippy placement="top" interactive={true} content='Close Search' offset={[0, 20]} theme='light-border' animation='perspective'>
+            <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><BsX /></button>
+          </Tippy>
+          <Tippy placement="top" interactive={true} content='Random Search' offset={[0, 20]} theme='light-border' animation='perspective'>
+            <button type="button" onClick={randomizeRecipe}><BsShuffle /></button>
+          </Tippy>
+          <Tippy placement="top" interactive={true} content='Search Recipe' offset={[0, 20]} theme='light-border' animation='perspective'>
+            <button className="search-btn" type="submit"><BsSearch /></button>
+          </Tippy>
         </div>
       </form>
     </>

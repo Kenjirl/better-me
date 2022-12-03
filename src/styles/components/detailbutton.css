@@ -23,11 +23,6 @@
   justify-content: flex-end;
 }
 
-.detail-button-container h3 {
-  display: none;
-  color: rgb(var(--color-1));
-}
-
 .detail-button-container a, .detail-button-container button {
   width: fit-content;
   aspect-ratio: 0;
@@ -39,10 +34,4 @@
 
 .bookmark-btn.bookmarked svg {
   fill: currentColor;
-}
-
-@media screen and (min-width: 600px) {
-  .detail-button-container h3 {
-    display: block;
-  }
 }

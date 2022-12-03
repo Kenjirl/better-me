@@ -3,6 +3,10 @@ import Loading from "../components/Loading";
 import RecipeList from "../components/RecipeList";
 import RecipePagination from "../components/RecipePagination";
 import { ImSortAlphaAsc, ImSortNumericAsc } from "react-icons/im";
+import Tippy from "@tippyjs/react";
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light-border.css';
+import 'tippy.js/animations/perspective.css';
 import '../styles/pages/bookmarkspage.css';
 
 export default function BookmarksPage() {
@@ -63,8 +67,12 @@ export default function BookmarksPage() {
           <div className="sort-btn-container">
             {
               sortRecipe !== 'alpha'
-              ? <button onClick={onChangeBookmarkSort}><ImSortAlphaAsc /></button>
-              : <button onClick={onChangeBookmarkSort}><ImSortNumericAsc /></button>
+              ? <Tippy placement='right' interactive={true} content='sort by name' offset={[0, 20]} theme='light-border' animation='perspective'>
+                  <button onClick={onChangeBookmarkSort}><ImSortAlphaAsc /></button>
+                </Tippy>
+              : <Tippy placement='right' interactive={true} content='sort by date' offset={[0, 20]} theme='light-border' animation='perspective'>
+                  <button onClick={onChangeBookmarkSort}><ImSortNumericAsc /></button>
+                </Tippy>
             }
           </div>
         </div>
@@ -84,8 +92,12 @@ export default function BookmarksPage() {
         <div className="sort-btn-container">
           {
             sortRecipe !== 'alpha'
-            ? <button onClick={onChangeBookmarkSort}><ImSortAlphaAsc /></button>
-            : <button onClick={onChangeBookmarkSort}><ImSortNumericAsc /></button>
+            ? <Tippy placement='right' interactive={true} content='sort by name' offset={[0, 20]} theme='light-border' animation='perspective'>
+                <button onClick={onChangeBookmarkSort}><ImSortAlphaAsc /></button>
+              </Tippy>
+            : <Tippy placement='right' interactive={true} content='sort by date' offset={[0, 20]} theme='light-border' animation='perspective'>
+                <button onClick={onChangeBookmarkSort}><ImSortNumericAsc /></button>
+              </Tippy>
           }
         </div>
       </div>

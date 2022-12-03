@@ -58,11 +58,6 @@ input::placeholder {
   color: rgba(64, 67, 74, .5);
 }
 
-input[type='text']:hover, 
-input[type='number']:hover {
-  background-color: rgba(var(--color-1), .3);
-}
-
 a, button {
   display: flex;
   align-items: center;
