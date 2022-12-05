@@ -1,4 +1,4 @@
-@media (min-width: 750px) {
+@media screen and (min-width: 750px) {
   .steps.section {
     grid-column: 1 / 3;
   }

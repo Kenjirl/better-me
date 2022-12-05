@@ -136,7 +136,7 @@
   color: rgb(var(--color-2));
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (orientation: landscape), (min-width: 800px) {
   .search-bar {
     position: -webkit-sticky;
     position: sticky;

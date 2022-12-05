@@ -6,7 +6,7 @@
   margin-top: 1em;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (orientation: landscape), (min-width: 800px) {
   .recipe-page-main {
     padding: .5em;
     display: flex;
@@ -35,7 +35,7 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (orientation: landscape), (min-width: 1000px) {
   .search-bar {
     flex-basis: 25%;
   }
