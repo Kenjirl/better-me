@@ -32,7 +32,8 @@ export default function RecipesPage() {
         setRecipes(data);
       }
       setIsLoading(false);
-    })
+    });
+    document.title = 'Better Me | Recipe List';
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

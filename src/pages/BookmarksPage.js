@@ -25,6 +25,7 @@ export default function BookmarksPage() {
       JSON.parse(localStorage.getItem('bookmarkedRecipes') || '[]')
     );
     setIsLoading(false);
+    document.title = 'Better Me | Bookmarks';
   }, []);
 
   const onPaginationChange = (pageIndex) => {

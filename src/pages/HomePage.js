@@ -9,6 +9,7 @@ import '../styles/pages/homepage.css';
 const HomePage = () => {
   useEffect(() => {
     Aos.init({duration: 1000});
+    document.title = 'Better Me';
   }, []);
 
   return (

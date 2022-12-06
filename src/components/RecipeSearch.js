@@ -29,25 +29,25 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
           <label htmlFor="calories">
             <span>Calories</span>
             <Tippy placement="top" interactive={true} content='min. 50, max. 1000' offset={[0,5]} theme='light-border' animation='perspective'>
-              <input className="search-input" name="calories" id="calories" type="number" onChange={calorieChange} placeholder="e.g. 100, 200, etc" />
+              <input className="search-input" name="calories" id="calories" type="number" onChange={calorieChange} placeholder="e.g. 100, 200, etc" min={50} max={1000} />
             </Tippy>
           </label>
           <label htmlFor="carbs">
             <span>Carbs</span>
             <Tippy placement="top" interactive={true} content='min. 10, max. 100' offset={[0,5]} theme='light-border' animation='perspective'>
-              <input className="search-input" name="carbs" id="carbs" type="number" onChange={carbChange} placeholder="e.g. 10, 20, etc" />
+              <input className="search-input" name="carbs" id="carbs" type="number" onChange={carbChange} placeholder="e.g. 10, 20, etc" min={10} max={100} />
             </Tippy>
           </label>
           <label htmlFor="fat">
             <span>Fat</span>
             <Tippy placement="top" interactive={true} content='min. 1, max. 100' offset={[0,5]} theme='light-border' animation='perspective'>
-              <input className="search-input" name="fat" id="fat" type="number" onChange={fatChange} placeholder="e.g. 1, 10, etc" />
+              <input className="search-input" name="fat" id="fat" type="number" onChange={fatChange} placeholder="e.g. 1, 10, etc" min={1} max={100} />
             </Tippy>
           </label>
           <label htmlFor="protein">
             <span>Protein</span>
             <Tippy placement="top" interactive={true} content='min. 10, max. 100' offset={[0,5]} theme='light-border' animation='perspective'>
-              <input className="search-input" name="protein" id="protein" type="number" onChange={proteinChange} placeholder="e.g. 10, 20, etc" />
+              <input className="search-input" name="protein" id="protein" type="number" onChange={proteinChange} placeholder="e.g. 10, 20, etc" min={10} max={100} />
             </Tippy>
           </label>
           <label htmlFor="ingredients">
