@@ -49,6 +49,9 @@
 .input-container {
   width: 100%;
   max-height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
   overflow-y: auto;
 }
 
@@ -59,6 +62,15 @@
   gap: .5em;
 }
 
+.search-bar label:has(> .search-input[type=text]) {
+  grid-column: 1/3;
+}
+
+.search-bar label:has(.search-input[type=radio]), 
+.search-bar label:has(.search-input[type=checkbox]) {
+  grid-column: 1/3;
+}
+
 .search-bar span {
   color: rgb(var(--color-1));
   font-weight: 700;
@@ -66,7 +78,7 @@
 
 .search-input {
   width: 100%;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   outline: none;
   border: 2px solid rgb(var(--color-1));
 }

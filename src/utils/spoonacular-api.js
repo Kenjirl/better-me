@@ -3,10 +3,9 @@ const API_KEY = [ '320e0fbf344c463793cf046bdff36de8', '156b4218b04147e690781d4af
 async function getManyRecipes({searchRecipe}) {
   for (const api_key of API_KEY) {
     const response = await fetch(`
-      https://api.spoonacular.com/recipes/complexSearch?apiKey=${api_key}&number=100&&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&includeIngredients=${searchRecipe.ingredients}&type=${searchRecipe.type}&diet=${searchRecipe.diet}&sort=${searchRecipe.sort}&instructionsRequired=true
+      https://api.spoonacular.com/recipes/complexSearch?apiKey=${api_key}&number=100&&query=${searchRecipe.name}&minCalories=${searchRecipe.minCalories}&maxCalories=${searchRecipe.maxCalories}&minCarbs=${searchRecipe.minCarbs}&maxCarbs=${searchRecipe.maxCarbs}&minFat=${searchRecipe.minFat}&maxFat=${searchRecipe.maxFat}&minProtein=${searchRecipe.minProtein}&maxProtein=${searchRecipe.maxProtein}&includeIngredients=${searchRecipe.ingredients}&type=${searchRecipe.type}&diet=${searchRecipe.diet}&sort=${searchRecipe.sort}&instructionsRequired=true
     `);
     const responseJson = await response.json();
-    console.log(response);
 
     if (response.status === 200) {
       return { error: false, data:responseJson.results};
@@ -21,7 +20,6 @@ async function getRandomRecipe() {
   for (const api_key of API_KEY) {
     const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${api_key}&number=100`);
     const responseJson = await response.json();
-    console.log(response);
 
     if (response.status === 200) {
       return { error: false, data:responseJson.results};

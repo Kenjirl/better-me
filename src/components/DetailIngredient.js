@@ -6,7 +6,7 @@ export default function DetailIngredient ({ ingredients }) {
     return (
       <section id="ingredientSection" className="ingredient section">
         <h3>Ingredients</h3>
-        <p>Tidak ada equipment</p>
+        <p>No ingredient recorded</p>
       </section>
     )
   }

@@ -6,7 +6,7 @@ import 'tippy.js/themes/light-border.css';
 import 'tippy.js/animations/perspective.css';
 import '../styles/components/recipesearch.css';
 
-export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) {
+export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameChange, calorieChange, carbChange, fatChange, proteinChange, ingredientChange, typeChoosen, dietChoosen, intolerantChecked, randomizeRecipe, sortChoosen }) {
   const recipeTypes = ['appetizer', 'beverage', 'breakfast', 'dessert', 'drink', 'main course', 'salad', 'side dish', 'snack', 'soup'];
   const recipeDiets = ['gluten free', 'ketogenic', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'pescetarian', 'paleo', 'primal'];
   const recipeIntolerants = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree nut', 'wheat'];
@@ -28,7 +28,27 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
           </label>
           <label htmlFor="calories">
             <span>Calories</span>
-            <input className="search-input" name="calories" id="calories" type="number" onChange={calorieChange} placeholder="e.g. 10, 200, 1000, etc" />
+            <Tippy placement="top" interactive={true} content='min. 50, max. 1000' offset={[0,5]} theme='light-border' animation='perspective'>
+              <input className="search-input" name="calories" id="calories" type="number" onChange={calorieChange} placeholder="e.g. 100, 200, etc" />
+            </Tippy>
+          </label>
+          <label htmlFor="carbs">
+            <span>Carbs</span>
+            <Tippy placement="top" interactive={true} content='min. 10, max. 100' offset={[0,5]} theme='light-border' animation='perspective'>
+              <input className="search-input" name="carbs" id="carbs" type="number" onChange={carbChange} placeholder="e.g. 10, 20, etc" />
+            </Tippy>
+          </label>
+          <label htmlFor="fat">
+            <span>Fat</span>
+            <Tippy placement="top" interactive={true} content='min. 1, max. 100' offset={[0,5]} theme='light-border' animation='perspective'>
+              <input className="search-input" name="fat" id="fat" type="number" onChange={fatChange} placeholder="e.g. 1, 10, etc" />
+            </Tippy>
+          </label>
+          <label htmlFor="protein">
+            <span>Protein</span>
+            <Tippy placement="top" interactive={true} content='min. 10, max. 100' offset={[0,5]} theme='light-border' animation='perspective'>
+              <input className="search-input" name="protein" id="protein" type="number" onChange={proteinChange} placeholder="e.g. 10, 20, etc" />
+            </Tippy>
           </label>
           <label htmlFor="ingredients">
             <span>Ingredients</span>
@@ -87,13 +107,13 @@ export default function RecipeSearch({ searchFormToggle, searchFormSubmit, nameC
           </label>
         </div>
         <div className="button-container">
-          <Tippy placement="top" interactive={true} content='Close Search' offset={[0, 20]} theme='light-border' animation='perspective'>
+          <Tippy placement="top" interactive={true} content='Close Search' offset={[0, 10]} theme='light-border' animation='perspective'>
             <button id="toggleSearchBtn" className="toggle-search-btn" type="button" onClick={searchFormToggle}><BsX /></button>
           </Tippy>
-          <Tippy placement="top" interactive={true} content='Random Search' offset={[0, 20]} theme='light-border' animation='perspective'>
+          <Tippy placement="top" interactive={true} content='Random Search' offset={[0, 10]} theme='light-border' animation='perspective'>
             <button type="button" onClick={randomizeRecipe}><BsShuffle /></button>
           </Tippy>
-          <Tippy placement="top" interactive={true} content='Search Recipe' offset={[0, 20]} theme='light-border' animation='perspective'>
+          <Tippy placement="top" interactive={true} content='Search Recipe' offset={[0, 10]} theme='light-border' animation='perspective'>
             <button className="search-btn" type="submit"><BsSearch /></button>
           </Tippy>
         </div>

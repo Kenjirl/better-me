@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Aos from "aos";
-import 'aos/dist/aos.css';
 import "../styles/components/recipelist.css";
 
 export default function RecipeList({ recipesList, page }) {
-  useEffect(() => {
-    Aos.init({duration: 1000});
-  }, []);
-
   if (!recipesList.length) {
     return (
       <div className="recipes-list-empty">
@@ -23,16 +17,20 @@ export default function RecipeList({ recipesList, page }) {
     <div className="recipes-list" id="recipesList">
       {
         recipesList.slice(0+indexRecipe, 10+indexRecipe).map((recipe) => (
-          <div className='recipe-container' key={recipe.id} data-aos="flip-right">
+          <Link to={`/recipe/${recipe.id}/detail`} className='recipe-container' key={recipe.id}>
             <img src={`${recipe.image}`} alt={`${recipe.title}`} draggable={false} />
             <h3>{recipe.title}</h3>
             {
               recipe.nutrition 
-              ? <p>Calories : {recipe.nutrition.nutrients[0].amount}kcal</p>
+              ? <div className="nutrition">
+                  <p>{parseFloat(recipe.nutrition.nutrients[0].amount).toFixed(0)}k cal</p>
+                  <p>{parseFloat(recipe.nutrition.nutrients[3].amount).toFixed(0)}g carbs</p>
+                  <p>{parseFloat(recipe.nutrition.nutrients[2].amount).toFixed(0)}g fat</p>
+                  <p>{parseFloat(recipe.nutrition.nutrients[1].amount).toFixed(0)}g protein</p>
+                </div>
               : <p></p>
             }
-            <Link to={`/recipe/${recipe.id}/detail`} className='to-detail-btn'>Try this Recipe</Link>
-          </div>
+          </Link>
         ))
       }
     </div>

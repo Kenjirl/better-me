@@ -6,7 +6,7 @@ export default function DetailEquipment({ equipments }) {
     return (
       <section id="equipmentSection" className="equipment section">
         <h3>Equipments</h3>
-        <p>Tidak ada equipment</p>
+        <p>No equipment recorded</p>
       </section>
     )
   }

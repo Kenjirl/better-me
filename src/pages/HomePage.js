@@ -20,7 +20,7 @@ const HomePage = () => {
         <div className="description-caption" data-aos="fade-up">
           <div>
             <span>BETTER ME</span>
-            <span> membantu Anda mencari berbagai jenis <b>resep</b> makanan sehat untuk memenuhi kebutuhan <b>kalori</b> Anda. </span>
+            <span> helps you find various types of healthy food <b>recipes</b> to meet your <b>calorie</b>, <b>carbohydrate</b>, <b>fat</b>, and <b>protein</b> needs. </span>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ const HomePage = () => {
         </div>
         <div className="services-container">
           <div className="service-info" data-aos="fade-up">
-            <p><b>Better Me</b> menyediakan berbagai fitur yang mampu membantu Anda mencari ide makanan sehat sesuai dengan keinginan Anda.  </p>
+            <p><b>Better Me</b> provides various features that can help you find healthy food ideas according to your wishes.  </p>
             <Link to="/recipes">Try our service</Link>
           </div>
           <div>
@@ -40,14 +40,14 @@ const HomePage = () => {
               <div>
                 <img className="svg" src={cookingSVG} alt="logo" />
               </div>
-              <p>Layanan <b>Daftar Resep</b> memberikan daftar makanan sehat secara acak, mulai dari resep sayur, daging, hingga buah.</p>
+              <p>The <b>Recipe List</b> feature provides a random list of healthy foods, ranging from vegetable, meat and fruit recipes.</p>
             </div>
             <div className="service" data-aos="fade-left">
-              <h3>Recipes by Calories</h3>
+              <h3>Recipes by Search</h3>
               <div>
                 <img className="svg" src={dietSVG} alt="logo" />
               </div>
-              <p>Layanan <b>Resep sesuai Kalori</b> memberikan daftar makanan sehat sesuai dengan takaran kalori yang diinginkan.</p>
+              <p>The <b>Recipes by Search</b> feature provides a list of healthy foods according to the desired calorie, carbs, fat, or protein level.</p>
             </div>
           </div>
         </div>

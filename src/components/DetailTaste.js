@@ -10,7 +10,7 @@ export default function DetailTaste({ tastes }) {
       <section id="tasteSection" className="taste section">
         <h3>Taste Chart</h3>
         <ul className="taste-widget" id="tasteWidget">
-          <li>Tidak ada tastes</li>
+          <li>No tastes data recorded</li>
         </ul>
       </section>
     )

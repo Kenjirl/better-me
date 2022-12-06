@@ -10,8 +10,10 @@ import '../styles/pages/recipespage.css';
 export default function RecipesPage() {
   const [searchRecipe, setSearchRecipe] = useState({
     name: '',
-    minCalories: 0,
-    maxCalories: 1000,
+    minCalories: 10, maxCalories: 1000,
+    minCarbs: 10, maxCarbs: 100,
+    minFat: 1, maxFat: 100,
+    minProtein: 10, maxProtein: 100,
     ingredients: '',
     type: '',
     diet: '',
@@ -56,14 +58,62 @@ export default function RecipesPage() {
     if (event.target.value === '') {
       setSearchRecipe((prevState) => ({
         ...prevState, 
-        minCalories: 0,
+        minCalories: 10,
         maxCalories: 1000,
       }));
     } else {
       setSearchRecipe((prevState) => ({
         ...prevState, 
-        minCalories: Number(event.target.value) - 50,
-        maxCalories: Number(event.target.value) + 50,
+        minCalories: Number(event.target.value) - 10,
+        maxCalories: Number(event.target.value) + 10,
+      }));
+    }
+  }
+
+  const onRecipeCarbsChange = event => {
+    if (event.target.value === '') {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        minCarbs: 10,
+        maxCarbs: 100,
+      }));
+    } else {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        minCarbs: Number(event.target.value) - 10,
+        maxCarbs: Number(event.target.value) + 10,
+      }));
+    }
+  }
+
+  const onRecipeFatChange = event => {
+    if (event.target.value === '') {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        minFat: 1,
+        maxFat: 100,
+      }));
+    } else {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        minFat: Number(event.target.value) - 5,
+        maxFat: Number(event.target.value) + 5,
+      }));
+    }
+  }
+
+  const onRecipeProteinChange = event => {
+    if (event.target.value === '') {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        minProtein: 10,
+        maxProtein: 100,
+      }));
+    } else {
+      setSearchRecipe((prevState) => ({
+        ...prevState, 
+        minProtein: Number(event.target.value) - 10,
+        maxProtein: Number(event.target.value) + 10,
       }));
     }
   }
@@ -144,13 +194,16 @@ export default function RecipesPage() {
           searchFormSubmit={onSearchFormSubmit} 
           nameChange={onRecipeNameChange} 
           calorieChange={onRecipeCaloriesChange} 
+          carbChange={onRecipeCarbsChange} 
+          fatChange={onRecipeFatChange} 
+          proteinChange={onRecipeProteinChange}
           ingredientChange={onRecipeIngredientsChange}
-          typeChoosen={onRecipeTypeChoosen} 
+          typeChoosen={onRecipeTypeChoosen}
           dietChoosen={onRecipeDietChoosen} 
           intolerantChecked={onRecipeIntolerantChecked} 
           randomizeRecipe={onRandomizeRecipe} 
           sortChoosen={onRecipeSortChoosen}
-          />
+        />
         <Loading />
       </main>
     )
@@ -163,6 +216,9 @@ export default function RecipesPage() {
         searchFormSubmit={onSearchFormSubmit} 
         nameChange={onRecipeNameChange} 
         calorieChange={onRecipeCaloriesChange} 
+        carbChange={onRecipeCarbsChange} 
+        fatChange={onRecipeFatChange} 
+        proteinChange={onRecipeProteinChange}
         ingredientChange={onRecipeIngredientsChange}
         typeChoosen={onRecipeTypeChoosen}
         dietChoosen={onRecipeDietChoosen} 

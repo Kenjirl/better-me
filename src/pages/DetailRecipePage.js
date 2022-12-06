@@ -81,9 +81,12 @@ export default function DetailRecipePage() {
       title: recipe.info.title,
       image: recipe.info.image, 
       nutrition: {
-        nutrients: [{
-          amount: recipe.nutrients.calories.replace('k',''),
-        }],
+        nutrients: [
+          { amount: recipe.nutrients.calories.replace('k',''), },
+          { amount: recipe.nutrients.protein, },
+          { amount: recipe.nutrients.fat, },
+          { amount: recipe.nutrients.carbs, },
+        ],
       },
     };
 
