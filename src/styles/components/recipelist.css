@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: space-between;
   border: none;
-  box-shadow: 1px 1px 1px rgba(var(--color-1), .5);
+  box-shadow: 0px 1px 3px rgba(var(--color-1), .75);
   background-color: rgb(var(--color-2));
   border-radius: 3px;
   overflow: hidden;
@@ -36,11 +36,6 @@
 .recipe-container:hover h3, .recipe-container:focus h3 {
   color: rgb(var(--color-2));
 }
-
-/* .recipe-container a {
-  width: fit-content;
-  margin: 1em;
-} */
 
 .recipe-container img {
   width: 100%;

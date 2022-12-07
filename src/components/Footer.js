@@ -20,9 +20,9 @@ const Footer = () => {
           <div className="footer-nav">
             <h3>Navigate</h3>
             <div>
-              <Link className="footer-item" to='/'>Homepage</Link>
-              <Link className="footer-item" to='/recipes'>Recipe List</Link>
-              <Link className="footer-item" to='/bookmarks'>Bokmarks</Link>
+              <Link className="footer-item" to='/'>Home</Link>
+              <Link className="footer-item" to='/recipes'>Recipe</Link>
+              <Link className="footer-item" to='/bookmarks'>Bookmarks</Link>
             </div>
           </div>
           <div className="contact">
