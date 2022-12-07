@@ -30,17 +30,16 @@ const Footer = () => {
             <div>
               <Tippy placement="bottom" trigger="click" hideOnClick="toggle" interactive={true} offset={[0, 5]} theme='light-border' animation='perspective' content={
                 <div className="contact-icon">
-                  <Link target='_blank' rel="noreferrer" to="https://wa.me/6281246007474"><BsWhatsapp /></Link>
-                  <Link target='_blank' rel="noreferrer" to="https://www.instagram.com/kenjirl_/"><BsInstagram /></Link>
-                  <Link target='_blank' rel="noreferrer" to="https://www.discordapp.com/users/Kencong#7353"><BsDiscord /></Link>
-                  <Link target='_blank' rel="noreferrer" to="https://github.com/Kenjirl"><BsGithub /></Link>
-                  <Link target='_blank' rel="noreferrer" to="https://www.linkedin.com/in/benedict-kenjiro-558325251/"><BsLinkedin /></Link>
+                  <a target='_blank' rel="noreferrer" href="https://wa.me/6281246007474"><BsWhatsapp /></a>
+                  <a target='_blank' rel="noreferrer" href="https://www.instagram.com/kenjirl_/"><BsInstagram /></a>
+                  <a target='_blank' rel="noreferrer" href="https://www.discordapp.com/users/Kencong#7353"><BsDiscord /></a>
+                  <a target='_blank' rel="noreferrer" href="https://github.com/Kenjirl"><BsGithub /></a>
+                  <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/benedict-kenjiro-558325251/"><BsLinkedin /></a>
                 </div>
               }>
                 <button className="footer-item">Kencong</button>
               </Tippy>
             </div>
-            {/* <a href="https://www.linkedin.com/in/benedict-kenjiro-558325251/">Kencong</a> */}
           </div>
         </div>
         <div className="copyright">
