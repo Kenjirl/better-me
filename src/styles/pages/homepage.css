@@ -22,20 +22,14 @@ main {
 }
 
 .parallax-caption h2 {
-  width: fit-content;
-  max-width: 300px;
-  padding: .5em;
-  font-size: 1.5em;
-  font-weight: 900;
-  color: rgb(var(--color-1));
-  background-color: rgb(var(--color-2));
-  border: 1px solid rgb(var(--color-1));
-  box-shadow: -10px 10px 1px rgb(var(--color-1));
+  width: 100%;
+  padding: 0 .5em;
+  font-size: 2.5em;
   text-align: center;
 }
 
 .parallax.description { 
-  background-position: left;
+  background-position: center;
   background-image: url('../../../public/img/background-1.jpg'); 
   text-align: justify;
 }
@@ -45,7 +39,8 @@ main {
 }
 
 .description-caption {
-  width: fit-content;
+  width: 100%;
+  background-color: rgba(var(--color-2), .9);
 }
 
 .description-caption > div {
@@ -53,7 +48,6 @@ main {
   max-width: 450px;
   margin: 0 auto;
   padding: 2em;
-  background-color: rgba(var(--color-2), .9);
 }
 
 .description span {
@@ -179,12 +173,23 @@ div:has(> .service) {
 }
 
 @media screen and (min-width: 650px) {
+  .parallax-caption h2 {
+    font-size: 3em;
+  }
+
   .description span {
     font-size: 1.25em;
   }
 
   .description span:nth-child(1) {
     font-size: 1.75em;
+  }
+
+  .description-caption > div {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
   }
 
   .service-info {
@@ -211,7 +216,7 @@ div:has(> .service) {
   }
 
   .parallax-caption {
-    width: 50%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,10 +227,11 @@ div:has(> .service) {
   }
 
   .description-caption {
-    width: 50%;
+    width: 60%;
+    background-color: transparent;
   }
 
   .description-caption > div {
-    background-color: transparent;
+    background-color: rgba(var(--color-2), .9);
   }
 }

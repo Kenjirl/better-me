@@ -15,18 +15,50 @@
   object-fit: cover;
 }
 
-.recipe-img figcaption {
-  font-size: .8em;
-  text-align: center;
-  text-transform: lowercase;
+.recipe-types {
+  width: 100%;
+  padding: .5em 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5em;
+  overflow-x: auto;
 }
 
-.prep-time {
-  margin: .5em 1.5em;
-  font-size: .8em;
+.type-item {
+  width: fit-content;
+  padding: .3em;
+  border-radius: 8px;
+  border: 1px solid rgb(var(--color-1));
+  white-space: nowrap;
 }
 
-@media screen and (min-width: 750px) {
+.other-info {
+  width: 100%;
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow-x: auto;
+}
+
+.other-info > div {
+  width: 100%;
+  padding: .5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  font-size: 1.2em;
+}
+
+.other-info p {
+  white-space: nowrap;
+}
+
+@media screen and (orientation: landscape), (min-width: 750px) {
   .recipe-info {
     display: flex;
     flex-direction: column;

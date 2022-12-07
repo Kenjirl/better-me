@@ -16,7 +16,7 @@ const HomePage = () => {
     <main>
       <div id="description" className="parallax description">
         <div className="parallax-caption" data-aos="fade-down">
-          <h2>#FOOD RECIPE APP</h2>
+          <h2>FOOD RECIPE APP</h2>
         </div>
         <div className="description-caption" data-aos="fade-up">
           <div>
@@ -28,7 +28,7 @@ const HomePage = () => {
 
       <div id="services" className="parallax services">
         <div className="parallax-caption" data-aos="fade-down">
-          <h2>#SERVICES</h2>
+          <h2>SERVICES</h2>
         </div>
         <div className="services-container">
           <div className="service-info" data-aos="fade-up">

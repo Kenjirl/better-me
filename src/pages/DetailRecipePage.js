@@ -20,7 +20,9 @@ export default function DetailRecipePage() {
     info: {
       title: null,
       image: null,
+      types: [],
       readyInMinutes: null,
+      servings: null,
     }, 
     equipments: [], 
     ingredients: [], 
@@ -43,6 +45,7 @@ export default function DetailRecipePage() {
   useEffect(() => {
     setIsLoading(true);
     getSource(id).then(({ error, data }) => {
+      console.log(data);
       if (error) {
         setRecipe(null);
       } else {
@@ -51,7 +54,9 @@ export default function DetailRecipePage() {
             id: data.info.id,
             title: data.info.title, 
             image: data.info.image, 
+            types: [...data.info.dishTypes],
             readyInMinutes: data.info.readyInMinutes,
+            servings: data.info.servings,
           }, 
           equipments: [...data.equipments],
           ingredients: [...data.ingredients],

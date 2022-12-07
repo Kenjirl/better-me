@@ -22,7 +22,7 @@ async function getRandomRecipe() {
     const responseJson = await response.json();
 
     if (response.status === 200) {
-      return { error: false, data:responseJson.results};
+      return { error: false, data:responseJson.recipes};
     }
   }
 
@@ -80,7 +80,9 @@ async function getSource(id) {
             id: responseJson.id,
             title: responseJson.title,
             image: responseJson.image,
+            dishTypes: [...responseJson.dishTypes],
             readyInMinutes: responseJson.readyInMinutes,
+            servings: responseJson.servings,
           }, 
           equipments:equipmentArr, 
           ingredients:ingredientArr, 
