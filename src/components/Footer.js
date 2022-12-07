@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { BsDiscord, BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light-border.css';
 import 'tippy.js/animations/perspective.css';
 import '../styles/components/footer.css'
-import { BsDiscord, BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

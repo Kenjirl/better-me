@@ -25,3 +25,5 @@ yarn-error.log*
 *.txt
 # Local Netlify folder
 .netlify
+
+_redirects
