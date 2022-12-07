@@ -26,6 +26,8 @@
 
 .recipe-container:hover, .recipe-container:focus {
   background-color: rgb(var(--color-1));
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 10px rgba(var(--color-1), .5);
 }
 
 .recipe-container h3 {
