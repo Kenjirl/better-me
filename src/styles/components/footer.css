@@ -115,7 +115,7 @@ footer h3 {
 .copyright {
   width: 100%;
   padding: 2em 1em 100px 1em;
-  border-top: 2px solid rgb(var(--color-2));
+  border-top: 2px solid rgb(var(--color-3));
 }
 
 .copyright p {
@@ -133,12 +133,19 @@ footer + div {
   .footer-content {
     min-height: 30vh;
     flex-direction: row;
-    justify-content: space-around;
+    align-items: stretch;
+    justify-content: center;
     gap: 0;
   }
   
   .footer-content > div {
-    max-width: 300px;
+    max-width: 600px;
+    padding: 0 2em;
+    justify-content: flex-start;
+  }
+
+  .footer-content > div:not(:nth-last-child(1)) {
+    border-right: 2px solid rgb(var(--color-3));
   }
 
   .footer-nav > div {
