@@ -39,6 +39,13 @@ https://better-me-242.netlify.app/
 
 https://youtu.be/0e-qoMe-HZg
 
+## Library or External Repository/API used : 
++ Spoonacular API : https://spoonacular.com 
++ Animated on Scroll : https://michalsnik.github.io/aos/ 
++ Tippy JS : https://atomiks.github.io/tippyjs/ 
++ Chart JS : https://www.chartjs.org 
++ React Chart JS : https://react-chartjs-2.js.org 
+
 ## Slide Presentation
 
 https://drive.google.com/file/d/1Y5Z78RWCNFSMwe2cTZYyBMi0DW7uIZH-/view?usp=sharing 
