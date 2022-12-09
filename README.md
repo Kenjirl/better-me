@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Better Me
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <img style="width: 100px; margin: 0; padding: 0; aspect-ratio: 1/1;" src="./public/img/logo.png" alt="better me's logo" />
+  <p>Aplikasi Resep Makanan Sehat</p>
+  <p>untuk memenuhi kebutuhan nutrisi</p>
+</div>
 
-## Available Scripts
+## About Team
 
-In the project directory, you can run:
+ID Team : C22-242
 
-### `npm start`
+Program : Front-End Web & React
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Anggota Kelompok : 
++ R014X0110 - Benedict Kenjiro Lehot
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Backgrounder
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Di zaman modern ini, banyak masyarakat yang menggemari makanan cepat saji, mulai dari anak-anak, remaja, hingga orang dewasa. Mereka mampu mengkonsumsi makanan cepat saji sebanyak 3 kali dalam sehari tanpa mengetahui atau mempedulikan kandungan nutrisi yang ada di dalam makanan tersebut. Bahkan, ada juga yang tidak ingin memakan makanan lain selain makanan cepat saji. Alhasil, penyakit atau gangguan seperti obesitas, masalah pencernaan, penyakit jantung, stroke, kanker, hingga diabetes kerap kita temukan pada masyarakat lansia bahkan remaja saat ini. 
 
-### `npm run build`
+_Better Me_ adalah sebuah aplikasi yang hadir dengan tujuan untuk menampilkan berbagai resep makanan sehat dan mencari resep makanan sehat sesuai takaran kalori yang dibutuhkan oleh tubuh. Pengguna dapat mencari resep makanan sesuai bahan-bahan yang dimiliki, sesuai takaran kalori, lemak, karbohidrat, hingga protein yang dibutuhkan. Selain itu, pengguna juga bisa mencari resep makanan tanpa memuat bahan-bahan yang menyebabkan alergi. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Dengan adanya aplikasi ini, diharapkan dapat membantu menyelesaikan masalah dari penderita penyakit akibat makanan cepat saji. Manfaat dari aplikasi ini adalah agar pengguna dapat mengetahui :
+1. Bagaimana cara membuat makanan sehat?
+2. Bagaimana cara membuat makanan yang sesuai dengan target kalori yang ingin dicapai? 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Untuk menjawab pertanyaan tersebut, aplikasi Better Me menyediakan beberapa fitur, yaitu : 
+1. _Recipe List_, di mana pengguna dapat melihat berbagai pilihan resep makanan yang disediakan. 
+2. _Recipe Search_, di mana pengguna dapat melakukan pencarian dan pemfilteran resep berdasarkan nama resep, jumlah kalori, lemak, protein, dan karbohidrat yang dibutuhkan, berdasarkan bahan-bahan yang dibutuhkan, jenis resep (sarapan, makanan penutup, dll), berdasarkan diet (vegetarian, gluten free, dll), berdasarkan alergi atau pantangan (telur, kacang, makanan laut, dll), serta dapat mengurutkan resep tersebut berdasarkan kalori, lemak, atau protein. 
+3. _Recipe Bookmark_, di mana pengguna dapat menyimpan resep yang diminati di dalam penyimpanan local pada web browser yang digunakan. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployed Link
 
-### `npm run eject`
+https://better-me-242.netlify.app/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Video Presentation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://youtu.be/0e-qoMe-HZg
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Slide Presentation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://drive.google.com/file/d/1Y5Z78RWCNFSMwe2cTZYyBMi0DW7uIZH-/view?usp=sharing 
 
-## Learn More
+## Video Demo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://youtu.be/l6rggdaRv5g 
