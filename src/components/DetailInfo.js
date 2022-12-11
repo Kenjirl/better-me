@@ -12,8 +12,6 @@ export default function DetailInfo({ recipe }) {
     )
   }
 
-  console.log(recipe);
-
   return (
     <div className="recipe-info">
       <h2 className="recipe-title">{recipe.title}</h2>

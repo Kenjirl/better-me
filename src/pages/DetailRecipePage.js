@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSource } from "../utils/spoonacular-api";
+import { ToastContainer, toast } from "react-toastify";
+import $ from 'jquery';
 import DetailButton from "../components/DetailButton";
 import DetailInfo from "../components/DetailInfo";
 import DetailEquipment from "../components/DetailEquipment";
@@ -11,6 +13,7 @@ import DetailNutrient from "../components/DetailNutrient";
 import DetailSimilar from "../components/DetailSimilar";
 import Loading from "../components/Loading";
 import NotFoundPage from "./NotFoundPage";
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/pages/detailrecipepage.css';
 
 export default function DetailRecipePage() {
@@ -45,7 +48,6 @@ export default function DetailRecipePage() {
   useEffect(() => {
     setIsLoading(true);
     getSource(id).then(({ error, data }) => {
-      console.log(data);
       if (error) {
         setRecipe(null);
       } else {
@@ -95,12 +97,34 @@ export default function DetailRecipePage() {
       },
     };
 
+    let notifPosition = '';
+    if ($(window).width() < 800 || $(window).innerHeight < $(window).innerWidth) {
+      notifPosition = 'top-center'
+    } else {
+      notifPosition = 'bottom-right'
+    }
+
+    const notify = message => {
+      toast.info(message, {
+        position: notifPosition,
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true, 
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+
     if (isBookmarked) {
       bookmarkedRecipes = bookmarkedRecipes.filter(r => r.id !== newBookmarkedRecipe.id);
       setIsBookmarked(false);
+      notify('Removed recipe from Bookmark');
     } else {
       bookmarkedRecipes.push(newBookmarkedRecipe);
       setIsBookmarked(true);
+      notify('Added recipe to Bookmark');
     }
     localStorage.setItem('bookmarkedRecipes', JSON.stringify(bookmarkedRecipes));
   }
@@ -122,6 +146,7 @@ export default function DetailRecipePage() {
   return (
     <main>
       <DetailButton bookmarkRecipe={onBookmarkRecipeClicked} isBookmarked={isBookmarked} />
+      <ToastContainer />
       <div className="food-recipe" id="foodRecipe">
         <DetailInfo recipe={recipe.info} />
         <DetailEquipment equipments={recipe.equipments} />
