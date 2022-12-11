@@ -47,6 +47,7 @@ https://youtu.be/0e-qoMe-HZg
 + Tippy JS : https://atomiks.github.io/tippyjs/ 
 + Chart JS : https://www.chartjs.org 
 + React Chart JS : https://react-chartjs-2.js.org 
++ React Toastify : https://fkhadra.github.io/react-toastify
 
 ## Slide Presentation
 
